@@ -7,3 +7,12 @@ body {
     color: #244751;
   }
 }
+
+.create-event-body {
+  display: flex;
+  text-align: center;
+  margin: 1em;
+  padding: 2em;
+  border-style: solid;
+  border-width: 2px;
+}
