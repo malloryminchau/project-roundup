@@ -4,5 +4,6 @@ CREATE TABLE event_proposals (
   title VARCHAR(255),
   guest_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   description TEXT,
+  location VARCHAR(255),
   url VARCHAR(255)
 );
