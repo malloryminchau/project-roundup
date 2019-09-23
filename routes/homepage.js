@@ -31,6 +31,7 @@ module.exports = (db) => {
       })
       //post request for the name field
       $('#help-desc-body').toggleUp();
+      $('#name-entry-field')
       $('#event-description-field-body').slideToggle();
     })
 
