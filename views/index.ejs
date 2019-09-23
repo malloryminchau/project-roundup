@@ -4,20 +4,20 @@
     <title>Round Up!</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <!-- JQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <script type="text/javascript" src="/scripts/app.js"></script>
-
+    <script type="text/javascript" src="/scripts/homepage.js"></script>
 
     <!-- Old CSS params, do not use -->
     <!-- <link rel="stylesheet" href="/styles/responsiveStyle.scss" type="text/css" /> -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" /> -->
     <!-- <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script> -->
 
-    <!-- JQuery -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
     <!-- FOMANTIC UI-->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.7.8/dist/semantic.min.css">
     <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.7.8/dist/semantic.min.js"></script>
@@ -69,14 +69,14 @@
       <div class="ui text container" style = "margin-bottom: 2em">
         <h1 class="ui inverted header" style="margin-top: 2em">ROUND UP</h1>
         <h2>Round up your mates!</h2>
-        <button class="ui huge primary button">Create Event!</button>
+        <button class="ui huge primary button" id="create-event-start">Create Event!</button>
         <br>
           <!-- <i class = "down arrow icon large"></i> -->
       </div>
     </div>
 
     <!-- Creator information Form -->
-    <div class = "create-event-body ui text container">
+    <div class = "create-event-body ui text container" id="name-email-body">
       <h1>Your Information</h1>
       <form method="POST" action="/">
         <h2>Enter your name</h2>
@@ -84,12 +84,12 @@
         <h2>Enter your email address</h2>
         <div class="ui input"> <input type="text" placeholder="Email...">  </div>
         <div class="ui hidden divider"> </div>
-        <button type = "submit" class="ui primary button">Save</button>
+        <button type = "submit" class="ui primary button" id="name-email-next">Save</button>
       </form>
     </div>
 
     <!-- Event information Form -->
-    <div class = "create-event-body ui text container">
+    <div class = "create-event-body ui text container" id="event-description-body">
       <h1>Event Details</h1>
       <form method="POST" action="/">
         <h2>Enter a Name for Your Event</h2>
@@ -99,12 +99,12 @@
         <h2>Enter your event location</h2>
         <div class="ui input"> <input type="text" placeholder="Location..."> </div>
         <div class="ui hidden divider"></div>
-        <button type = "submit" class="ui primary button">Save</button>
+        <button type = "submit" class="ui primary button" id="description-location-next">Save</button>
       </form>
     </div>
 
     <!-- Event Availability Creation Form -->
-    <div class = "create-event-body ui text container">
+    <div class = "create-event-body ui text container" id="proposal-times-body">
       <h1>Possible Event Times</h1>
       <form method="POST" action="/">
 
@@ -114,7 +114,7 @@
             <input type="text" placeholder="Date">
           </div>
         </div>
-        <button type = "submit" class="ui primary button">Save</button>
+        <button type = "submit" class="ui primary button" id="proposal-calendar">Save</button>
       </form>
     </div>
 
