@@ -52,19 +52,23 @@ module.exports = (db) => {
 
     $('#proposal-calendar').on('click', (event) => {
       event.preventDefault();
-      router.post("/:newURL", (req, res) => {
-        $.ajax({
-          url: `${'url-name-based-on-database'}`,
-          method: 'POST',
-          data: 'proposals',
-          success: function() {
-            addNewProposal('fill-in-parameters');
-          }
-        })
+      // router.post("/:newURL", (req, res) => {
+        // $.ajax({
+        //   url: `${'url-name-based-on-database'}`,
+        //   method: 'POST',
+        //   data: 'proposals',
+        //   success: function() {
+        //     addNewProposal('fill-in-parameters');
+        //   }
+        // })
         //newURL needs to come from SQL query after event is created
-        res.redirect("/:newURL")
+        res.redirect("/")
       })
     })
-  })
 
-};
+    router.get("/testview", (req, res) => {
+      res.render("views/testview.ejs")
+    })
+    
+  }
+

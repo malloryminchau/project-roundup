@@ -50,6 +50,11 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
+//testPage to build table view
+app.get("/testview", (req, res) => {
+  res.render("testview");
+});
+
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
