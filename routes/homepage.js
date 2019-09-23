@@ -31,7 +31,7 @@ module.exports = (db) => {
       })
       //post request for the name field
       $('#help-desc-body').toggleUp();
-      $('#name-entry-field')
+      $('#name-entry-field').toggleUp();
       $('#event-description-field-body').slideToggle();
     })
 
@@ -64,7 +64,6 @@ module.exports = (db) => {
         //newURL needs to come from SQL query after event is created
         res.redirect("/:newURL")
       })
-
     })
   })
 
