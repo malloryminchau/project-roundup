@@ -67,6 +67,4 @@ module.exports = (db) => {
     })
   })
 
-
-
 };
