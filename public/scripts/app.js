@@ -8,6 +8,7 @@ function generateRandomString() { // this function generates a random 10 charact
 }
 
 
+
 $(() => {
   $.ajax({
     method: "GET",
