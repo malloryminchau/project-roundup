@@ -67,7 +67,7 @@
     <!-- TITLE container -->
     <div class="ui inverted vertical masthead center aligned segment">
       <div class="ui text container" style = "margin-bottom: 2em">
-        <h1 class="ui inverted header" style="margin-top: 2em">ROUND UP</h1>
+        <h1 class="ui inverted header">ROUND UP</h1>
         <h2>Round up your mates!</h2>
         <button class="ui huge primary button" id="create-event-start" type="submit">Create Event!</button>
         <br>
@@ -95,11 +95,11 @@
       <h1>Event Details</h1>
       <form method="POST" action="/">
         <h2>Enter a Name for Your Event</h2>
-        <div class="ui input"> <input type="text" placeholder="Event Name..."> </div>
+        <div class="ui input"> <input id="event-name" type="text" placeholder="Event Name..."> </div>
         <h2>Enter a description for your event</h2>
-        <div class="ui input"> <input type="text" placeholder="Description..."> </div>
+        <div class="ui input"> <input id="event-description" type="text" placeholder="Description..."> </div>
         <h2>Enter your event location</h2>
-        <div class="ui input"> <input type="text" placeholder="Location..."> </div>
+        <div class="ui input"> <input id="event-location" type="text" placeholder="Location..."> </div>
         <div class="ui hidden divider"></div>
         <button type = "submit" class="ui primary button" id="description-location-next">Save</button>
       </form>

@@ -1,6 +1,7 @@
 // load .env data into process.env
 require('dotenv').config();
 const createUsers = require('./lib/createUsers.js')
+const createEventProposals = require('./lib/createEventProposals.js')
 
 // Web server config
 const PORT       = process.env.PORT || 8080;
@@ -58,7 +59,15 @@ app.get("/testview", (req, res) => {
 
 app.post("/api/name", (req, res) => {
   console.log(req.body.nameInput[0])
-  createUsers.createEventProposalsUsers(req.body.nameInput[0], req.body.nameInput[1])
+  console.log(req.body.nameInput[1])
+  createUsers.createEventProposalsUsers(db, req.body.nameInput[0], req.body.nameInput[1])
+  res.send('YAY')
+})
+
+app.post("/api/name", (req, res) => {
+  console.log(req.body.nameInput[0])
+  console.log(req.body.nameInput[1])
+  createEventProposals.createDescription(db, req.body.nameInput[0], req.body.nameInput[1])
   res.send('YAY')
 })
 

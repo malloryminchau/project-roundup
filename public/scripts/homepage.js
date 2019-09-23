@@ -37,16 +37,17 @@
 // NEXT BUTTON FROM EVENT FIELD after the event name and desc its toggled up and the time options are toggled down
     $('#description-location-next').on('click', (event) => {
       event.preventDefault();
-      // $.ajax({  // adds the event name and desc and location to database
-      //   url: '/',
-      //   method: 'POST',
-      //   data: 'eventInput',
-      //   success: function() {
-      //     addNewEvent('fill-in-with-parameters'); //Andrew file/callable function parameters and name here
-      //   }
-      // })
-      $('#event-description-body').slideUp();
-      $('#proposal-times-body').slideDown();
+      const eventInput = [$('#event-name'), $('#event-description'), $('#event-location')]
+      $.ajax({  // adds the event name and desc and location to database
+        url: '/api/eventdisc',
+        method: 'POST',
+        data: {eventInput: eventInput},
+        success: function() {
+          $('#event-description-body').slideUp();
+          $('#proposal-times-body').slideDown();
+        }
+      })
+
     })
 
     $('#proposal-calendar').on('click', (event) => {
