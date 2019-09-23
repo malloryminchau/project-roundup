@@ -35,15 +35,61 @@
   <body >
 
     <!-- NAV BAR -->
-    <div class="ui inverted vertical masthead center aligned segment">
+    <!-- <div class="ui inverted vertical masthead center aligned segment">
       <div class ="ui inverted container">
         <div class ="ui large secondary inverted pointing menu">
-          <a class ="toc item"></a>
+            <a class="toc item"></a>
           <a class = "active item">Home</a>
           <a class = "item">How it works</a>
         </div>
       </div>
+    </div> -->
+
+    <!-- Side Bar Testing-->
+    <nav>
+
+    <div class = "ui basic icon top fixed inverted menu">
+      <a id = "toggle" class = "item">
+        <i class = "sidebar icon"></i>
+      </a>
+      <a class ="right item">
+        <h2>ROUND UP</h2>
+      </a>
+
     </div>
+
+
+
+    <div class="ui left demo vertical inverted sidebar labeled icon menu">
+        <a class="item">
+          <i class="home icon"></i>
+          Home
+        </a>
+        <a class="item">
+          <i class="block layout icon"></i>
+          How to use
+        </a>
+        <a class="item">
+          <i class="smile icon"></i>
+          Create Event
+        </a>
+    </div>
+    <script>
+    $('#toggle').click(function(){
+      $('.ui.sidebar').sidebar('toggle');
+    });
+    </script>
+
+    <div class = "ui text container">
+        <p>This is just a paragraph to test font size</p>
+    </div>
+
+  </nav>
+
+
+
+
+
 
     <!-- hidden nav bar -->
     <!-- <div class="ui large top fixed menu transition hidden" style="display: flex !important;">
