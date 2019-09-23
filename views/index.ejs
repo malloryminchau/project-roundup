@@ -69,7 +69,7 @@
       <div class="ui text container" style = "margin-bottom: 2em">
         <h1 class="ui inverted header" style="margin-top: 2em">ROUND UP</h1>
         <h2>Round up your mates!</h2>
-        <button class="ui huge primary button" id="create-event-start">Create Event!</button>
+        <button class="ui huge primary button" id="create-event-start" type="submit">Create Event!</button>
         <br>
           <!-- <i class = "down arrow icon large"></i> -->
       </div>
@@ -77,16 +77,18 @@
 
     <!-- Creator information Form -->
     <div class = "create-event-body ui text container" id="name-email-body">
+
       <h1>Your Information</h1>
       <form method="POST" action="/">
         <h2>Enter your name</h2>
-        <div class="ui input"> <input type="text" placeholder="Name..."> </div>
+        <div class="ui input"> <input id="name-field" type="text" placeholder="Name..."> </div>
         <h2>Enter your email address</h2>
-        <div class="ui input"> <input type="text" placeholder="Email...">  </div>
+        <div class="ui input"> <input id="email-field" type="text" placeholder="Email...">  </div>
         <div class="ui hidden divider"> </div>
         <button type = "submit" class="ui primary button" id="name-email-next">Save</button>
       </form>
     </div>
+    <script>$('#name-email-body').slideUp(0)</script>
 
     <!-- Event information Form -->
     <div class = "create-event-body ui text container" id="event-description-body">
@@ -102,7 +104,7 @@
         <button type = "submit" class="ui primary button" id="description-location-next">Save</button>
       </form>
     </div>
-
+    <script>$('#event-description-body').slideUp(0)</script>
     <!-- Event Availability Creation Form -->
     <div class = "create-event-body ui text container" id="proposal-times-body">
       <h1>Possible Event Times</h1>
@@ -117,7 +119,7 @@
         <button type = "submit" class="ui primary button" id="proposal-calendar">Save</button>
       </form>
     </div>
-
+    <script>$('#proposal-times-body').slideUp(0)</script>
     <script>
       $('#standard_calendar')
         .calendar()
