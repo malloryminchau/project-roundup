@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS availabilities CASCADE;
 CREATE TABLE availabilities (
   id SERIAL PRIMARY KEY NOT NULL,
-  event_id INTEGER REFERENCES events_proposals(id) ON DELETE CASCADE,
+  event_id INTEGER REFERENCES event_proposals(id) ON DELETE CASCADE,
   user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
   time TIMESTAMP,
   availability BOOLEAN DEFAULT FALSE
