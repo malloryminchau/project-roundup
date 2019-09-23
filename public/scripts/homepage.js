@@ -21,11 +21,10 @@
       //POST REQUEST to database for USERS table
       const nameInput = [$('#name-field').val(), $('#email-field').val()];
       $.ajax({
-        url: '/',
+        url: '/api/name',
         method: 'POST',
-        data: nameInput, //willhave multiple values for the database. figure out how this integrates into a query
-        success: function() {
-          createEventProposalsUsers();  //Andrews file/ callable function to input the data into the file
+        data: {nameInput: nameInput}, //willhave multiple values for the database. figure out how this integrates into a query
+        success: function() {  //Andrews file/ callable function to input the data into the file
           $('#name-email-body').slideUp();
           $('#event-description-body').slideDown();
         }

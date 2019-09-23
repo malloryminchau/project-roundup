@@ -1,5 +1,6 @@
 // load .env data into process.env
 require('dotenv').config();
+const createUsers = require('./lib/createUsers.js')
 
 // Web server config
 const PORT       = process.env.PORT || 8080;
@@ -54,6 +55,12 @@ app.get("/", (req, res) => {
 app.get("/testview", (req, res) => {
   res.render("testview");
 });
+
+app.post("/api/name", (req, res) => {
+  console.log(req.body.nameInput[0])
+  createUsers.createEventProposalsUsers(req.body.nameInput[0], req.body.nameInput[1])
+  res.send('YAY')
+})
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
