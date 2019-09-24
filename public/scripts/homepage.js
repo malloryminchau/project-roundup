@@ -23,25 +23,28 @@
       $.ajax({
         url: '/api/name',
         method: 'POST',
-        data: {nameInput: nameInput}, //willhave multiple values for the database. figure out how this integrates into a query
-        success: function() {  //Andrews file/ callable function to input the data into the file
+        data: {nameInput}, //willhave multiple values for the database. figure out how this integrates into a query
+        success: function(response) {  //Andrews file/ callable function to input the data into the file
+          console.log(response)
+          window.localStorage.setItem('email', response)
           $('#name-email-body').slideUp();
           $('#event-description-body').slideDown();
         }
       })
-      //post request for the name field
-      // $('#help-desc-body').toggleUp();
 
     })
+
 
 // NEXT BUTTON FROM EVENT FIELD after the event name and desc its toggled up and the time options are toggled down
     $('#description-location-next').on('click', (event) => {
       event.preventDefault();
-      const eventInput = [$('#event-name'), $('#event-description'), $('#event-location')]
+      console.log(window.localStorage.getItem('email'))
+      let email = window.localStorage.getItem('email')
+      const eventInput = [$('#event-name').val(), $('#event-description').val(), $('#event-location').val(), email]
       $.ajax({  // adds the event name and desc and location to database
-        url: '/api/eventdisc',
+        url: '/api/eventdesc',
         method: 'POST',
-        data: {eventInput: eventInput},
+        data: {eventInput},
         success: function() {
           $('#event-description-body').slideUp();
           $('#proposal-times-body').slideDown();
