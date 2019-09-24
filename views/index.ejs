@@ -1,52 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Round Up!</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- JQuery -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <script type="text/javascript" src="/scripts/app.js"></script>
-    <script type="text/javascript" src="/scripts/homepage.js"></script>
+<head>
+  <title>Round Up!</title>
 
-    <!-- Old CSS params, do not use -->
-    <!-- <link rel="stylesheet" href="/styles/responsiveStyle.scss" type="text/css" /> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" /> -->
-    <!-- <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- JQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <script type="text/javascript" src="/scripts/app.js"></script>
+  <script type="text/javascript" src="/scripts/homepage.js"></script>
 
-
-    <!-- FOMANTIC UI-->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.7.8/dist/semantic.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.7.8/dist/semantic.min.js"></script>
-
-    <!-- Semantic UI Calendar Module-->
-    <link rel="stylesheet" href="/vendor/calendar.css" type="text/css" />
-    <script type="text/javascript" src="/vendor/calendar.js"></script>
-
-    <!-- <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI-Calendar/76959c6f7d33a527b49be76789e984a0a407350b/dist/calendar.min.js"></script> -->
+  <!-- Old CSS params, do not use -->
+  <!-- <link rel="stylesheet" href="/styles/responsiveStyle.scss" type="text/css" /> -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" /> -->
+  <!-- <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script> -->
 
 
+  <!-- FOMANTIC UI-->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.7.8/dist/semantic.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.7.8/dist/semantic.min.js"></script>
 
-  </head>
+  <!-- Semantic UI Calendar Module-->
+  <link rel="stylesheet" href="/vendor/calendar.css" type="text/css" />
+  <script type="text/javascript" src="/vendor/calendar.js"></script>
 
-  <body >
+  <!-- <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI-Calendar/76959c6f7d33a527b49be76789e984a0a407350b/dist/calendar.min.js"></script> -->
 
-    <!-- NAV BAR -->
-    <div class="ui inverted vertical masthead center aligned segment">
-      <div class ="ui inverted container">
-        <div class ="ui large secondary inverted pointing menu">
-          <a class ="toc item"></a>
-          <a class = "active item">Home</a>
-          <a class = "item">How it works</a>
-        </div>
+
+
+</head>
+
+<body>
+
+  <!-- NAV BAR -->
+  <div class="ui inverted vertical masthead center aligned segment">
+    <div class="ui inverted container">
+      <div class="ui large secondary inverted pointing menu">
+        <a class="toc item"></a>
+        <a class="active item">Home</a>
+        <a class="item">How it works</a>
       </div>
     </div>
+  </div>
 
-    <!-- hidden nav bar -->
-    <!-- <div class="ui large top fixed menu transition hidden" style="display: flex !important;">
+  <!-- hidden nav bar -->
+  <!-- <div class="ui large top fixed menu transition hidden" style="display: flex !important;">
       <div class="ui container">
         <a class="active item">Home</a>
         <a class="item">Work</a>
@@ -64,72 +65,83 @@
     </div> -->
 
 
-    <!-- TITLE container -->
-    <div class="ui inverted vertical masthead center aligned segment">
-      <div class="ui text container" style = "margin-bottom: 2em">
-        <h1 class="ui inverted header">ROUND UP</h1>
-        <h2>Round up your mates!</h2>
-        <button class="ui huge primary button" id="create-event-start" type="submit">Create Event!</button>
-        <br>
-          <!-- <i class = "down arrow icon large"></i> -->
-      </div>
+  <!-- TITLE container -->
+  <div class="ui inverted vertical masthead center aligned segment">
+    <div class="ui text container" style="margin-bottom: 2em">
+      <h1 class="ui inverted header">ROUND UP</h1>
+      <h2>Round up your mates!</h2>
+      <button class="ui huge primary button" id="create-event-start" type="submit">Create Event!</button>
+      <br>
+      <!-- <i class = "down arrow icon large"></i> -->
     </div>
+  </div>
 
-    <!-- Creator information Form -->
-    <div class = "create-event-body ui text container" id="name-email-body" style = "display: none">
+  <!-- Creator information Form -->
+  <div class="create-event-body ui text container" id="name-email-body" style="display: none">
 
-      <h1>Your Information</h1>
-      <form method="POST" action="/">
-        <h2>Enter your name</h2>
-        <div class="ui input"> <input id="name-field" type="text" placeholder="Name..."> </div>
-        <h2>Enter your email address</h2>
-        <div class="ui input"> <input id="email-field" type="text" placeholder="Email...">  </div>
-        <div class="ui hidden divider"> </div>
-        <button type = "submit" class="ui primary button" id="name-email-next">Save</button>
-      </form>
-    </div>
-    <!-- <script>$('#name-email-body').slideUp(0)</script> -->
+    <h1>Your Information</h1>
+    <form method="POST" action="/">
+      <h2>Enter your name</h2>
+      <div class="ui input"> <input id="name-field" type="text" placeholder="Name..."> </div>
+      <h2>Enter your email address</h2>
+      <div class="ui input"> <input id="email-field" type="text" placeholder="Email..."> </div>
+      <div class="ui hidden divider"> </div>
+      <button type="submit" class="ui primary button" id="name-email-next">Save</button>
+    </form>
+  </div>
+  <!-- <script>$('#name-email-body').slideUp(0)</script> -->
 
-    <!-- Event information Form -->
-    <div class = "create-event-body ui text container" id="event-description-body" style = "display: none">
-      <h1>Event Details</h1>
-      <form method="POST" action="/">
-        <h2>Enter a Name for Your Event</h2>
-        <div class="ui input"> <input id="event-name" type="text" placeholder="Event Name..."> </div>
-        <h2>Enter a description for your event</h2>
-        <div class="ui input"> <input id="event-description" type="text" placeholder="Description..."> </div>
-        <h2>Enter your event location</h2>
-        <div class="ui input"> <input id="event-location" type="text" placeholder="Location..."> </div>
-        <div class="ui hidden divider"></div>
-        <button type = "submit" class="ui primary button" id="description-location-next">Save</button>
-      </form>
-    </div>
-    <!-- <script>$('#event-description-body').slideUp(0)</script> -->
+  <!-- Event information Form -->
+  <div class="create-event-body ui text container" id="event-description-body" style="display: none">
+    <h1>Event Details</h1>
+    <form method="POST" action="/">
+      <h2>Enter a Name for Your Event</h2>
+      <div class="ui input"> <input id="event-name" type="text" placeholder="Event Name..."> </div>
+      <h2>Enter a description for your event</h2>
+      <div class="ui input"> <input id="event-description" type="text" placeholder="Description..."> </div>
+      <h2>Enter your event location</h2>
+      <div class="ui input"> <input id="event-location" type="text" placeholder="Location..."> </div>
+      <div class="ui hidden divider"></div>
+      <button type="submit" class="ui primary button" id="description-location-next">Save</button>
+    </form>
+  </div>
+  <!-- <script>$('#event-description-body').slideUp(0)</script> -->
 
 
-    <!-- Event Availability Creation Form -->
-    <div class = "create-event-body ui text container" id="proposal-times-body" style = "display: none">
-      <h1>Possible Event Times</h1>
-      <form method="POST" action="/">
+  <!-- Event Availability Creation Form -->
+  <div class="create-event-body ui text container" id="proposal-times-body" style="display: none">
+    <h1>Possible Event Times</h1>
+    <form method="POST" action="/">
 
-        <div class="ui calendar" id="standard_calendar">
-          <div class="ui input left icon">
-            <i class="calendar icon"></i>
-            <input type="text" placeholder="Date" id="proposal-calendar"> <button class ="ui primary button" id="proposal-save-button">Add Availability</button>
-          </div>
+      <div class="ui calendar" id="standard_calendar">
+        <div class="ui input left icon">
+          <i class="calendar icon"></i>
+          <input type="text" placeholder="Date" id="proposal-calendar"> <button class="ui primary button"
+            id="proposal-save-button">Add Availability</button>
         </div>
-        <div class="ui hidden divider"></div>
-      </form>
+      </div>
+      <div class="ui hidden divider"></div>
+    </form>
 
-        <button type = "submit" class="ui primary button" id="save-redirect">Save</button>
-   
-    </div>
-    <!-- <script>$('#proposal-times-body').slideUp(0)</script> -->
-    <script>
-      $('#standard_calendar')
-        .calendar()
-      ;
-    </script>
+    <button type="submit" class="ui primary button" id="save-redirect">Save</button>
 
-  </body>
+  </div>
+  <!-- <script>$('#proposal-times-body').slideUp(0)</script> -->
+  <script>
+    $('#standard_calendar')
+      .calendar();
+
+  </script>
+  <script>
+    function activatePlacesSearch() {
+      var input = document.getElementById('event-location');
+      var autocomplete = new google.maps.places.Autocomplete(input);
+    };
+
+  </script>
+  <script type="text/javascript"
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACYXbgQD7bienLXAuDPzyXthWtmOmC4yc&libraries=places&callback=activatePlacesSearch">
+  </script>
+</body>
+
 </html>
