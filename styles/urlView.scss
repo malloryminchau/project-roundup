@@ -1,0 +1,32 @@
+@media (max-width: 600px) {
+
+    body {
+      font-size: 20rem;
+    }
+
+    div#proposal-header h1 {
+      margin: 0.25em;
+      font-size: 2rem
+    }
+
+    div#proposal-header h2 {
+      margin: 0.25rem;
+      font-size: 0.75rem
+    }
+
+    div#proposal-header h3 {
+      margin: 0.25rem;
+      font-size: 1rem
+    }
+
+
+}
+
+div#proposal-header {
+  text-align: center;
+}
+
+// .ui#content{
+//   // padding should be the same as header height
+//   padding-top: 55px;
+// }
