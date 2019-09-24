@@ -94,3 +94,11 @@ app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
 });
 
+
+app.get("/:url", (req, res) => {
+  // let urlsIndex = { url: req.body }
+  console.log("reqparams"+ req.params.url)
+  console.log("about to render or redirect to new page")
+  //console.log(req.body)
+  res.render("testview")
+})
