@@ -1,35 +1,10 @@
-@media (max-width: 600px) {
+a#toggle {
+  margin-right: 3rem;
+}
 
-    // body {
-    //   font-size: 20rem;
-    // }
-
-    div#proposal-header h1 {
-      margin: 0.25em;
-      font-size: 2rem
-    }
-
-    div#proposal-header h2 {
-      margin: 0.25rem;
-      font-size: 0.75rem
-    }
-
-    div#proposal-header h3 {
-      margin: 0.25rem;
-      font-size: 1rem
-    }
-
-    div.ui.input {
-      padding: 0em;
-    }
-
-    h2 {
-      font-size: 1.25em;
-    }
-
-
-
-} // End of media small size
+div#sidebar {
+  background: #042838;
+}
 
 div#proposal-header {
   text-align: center;
@@ -42,6 +17,72 @@ div#rsvp {
 div#user-authentication {
   text-align: center;
 }
+
+h1#logo {
+  align-items: center;
+  // margin-left: auto;
+  // margin-right: 0px;
+  color: white;
+  font-size: 4.5rem;
+  text-align: center;
+}
+
+h2#logo {
+  align-items: center;
+  // margin-left: 0px;
+  // margin-right: auto;
+  color: white;
+  font-size: 4.5rem;
+  text-align: center;
+}
+
+div#navbar {
+  padding: 1rem;
+  background:#133F53;
+}
+
+@media (max-width: 600px) {
+
+  h1#logo {
+    display: flex;
+    float: center;
+    color: white;
+    // margin-left: 1rem;
+    font-size: 2rem;
+  }
+
+  div#proposal-header h1 {
+    margin: 0.25em;
+    font-size: 2rem
+  }
+
+  div#proposal-header h2 {
+    margin: 0.25rem;
+    font-size: 0.75rem
+  }
+
+  div#proposal-header h3 {
+    margin: 0.25rem;
+    font-size: 1rem
+  }
+
+  div.ui.input {
+    padding: 0em;
+  }
+
+  div#navbar {
+    background:#133F53;
+    padding: 0.25rem;
+  }
+
+  a#toggle {
+    margin-right: 1rem;
+  }
+
+
+
+} // End of media small size
+
 
 // .ui#content{
 //   // padding should be the same as header height
