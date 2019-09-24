@@ -6,70 +6,77 @@ $(document).ready(() => {
   // })
 
   // CREATE NEW BUTTON CLICKED everything else is toggled away (if help is toggled move it up) name field toggled
-  $('#create-event-start').on('click', (event) => { //new-event-button is a stand in for now before route id is selected
+  $("#create-event-start").on("click", event => {
+    //new-event-button is a stand in for now before route id is selected
     event.preventDefault();
-    console.log("Hello I am working!")
+    console.log("Hello I am working!");
     // $('#help-desc-body').toggleUp(); //change command to make sure this is toggled UP when this is clicked (default on all stages)
-    $('#name-email-body').slideDown(); //name fill in form slides down
-  })
+    $("#name-email-body").slideDown(); //name fill in form slides down
+  });
 
   // NEXT BUTTON FROM NAME ENTRY FIELD when clicked the name field should toggle away and the new form will toggle down
-  $('#name-email-next').on('click', (event) => {
+  $("#name-email-next").on("click", event => {
     event.preventDefault();
     //POST REQUEST to database for USERS table
-    const nameInput = [$('#name-field').val(), $('#email-field').val()];
+    const nameInput = [$("#name-field").val(), $("#email-field").val()];
     $.ajax({
-      url: '/api/name',
-      method: 'POST',
+      url: "/api/name",
+      method: "POST",
       data: {
         nameInput
       }, //willhave multiple values for the database. figure out how this integrates into a query
-      success: function (response) { //Andrews file/ callable function to input the data into the file
-        console.log(response)
-        window.localStorage.setItem('email', response)
-        $('#name-email-body').slideUp();
-        $('#event-description-body').slideDown();
+      success: function(response) {
+        //Andrews file/ callable function to input the data into the file
+        console.log(response);
+        window.localStorage.setItem("email", response);
+        $("#name-email-body").slideUp();
+        $("#event-description-body").slideDown();
       }
-    })
-
-  })
-
+    });
+  });
 
   // NEXT BUTTON FROM EVENT FIELD after the event name and desc its toggled up and the time options are toggled down
-  $('#description-location-next').on('click', (event) => {
+  $("#description-location-next").on("click", event => {
     event.preventDefault();
-    console.log(window.localStorage.getItem('email'));
-    let email = window.localStorage.getItem('email');
-    const eventInput = [$('#event-name').val(), $('#event-description').val(), $('#event-location').val(), email]
-    $.ajax({ // adds the event name and desc and location to database
-      url: '/api/eventdesc',
-      method: 'POST',
+    console.log(window.localStorage.getItem("email"));
+    let email = window.localStorage.getItem("email");
+    const eventInput = [
+      $("#event-name").val(),
+      $("#event-description").val(),
+      $("#event-location").val(),
+      email
+    ];
+    $.ajax({
+      // adds the event name and desc and location to database
+      url: "/api/eventdesc",
+      method: "POST",
       data: {
         eventInput
       },
-      success: function () {
-        $('#event-description-body').slideUp();
-        $('#proposal-times-body').slideDown();
+      success: function() {
+        window.localStorage.setItem("url", response);
+        $("#event-description-body").slideUp();
+        $("#proposal-times-body").slideDown();
       }
     });
-
   });
 
-  $('#proposal-calendar').on('click', (event) => {
+  $("#proposal-calendar").on("click", event => {
     event.preventDefault();
-    const availabilities = [$('#proposal-calendar').val()];
+    let url = window.localStorage.getItem("url");
+    const availabilities = [$("#proposal-calendar").val(), url];
+
     // router.post("/:newURL", (req, res) => {
     $.ajax({
       url: `/api/availabilities`,
-      method: 'POST',
+      method: "POST",
       data: {
         availabilities
       },
-      success: function () {
-        $('#proposal-times-body').slideUp();
+      success: function() {
+        $("#proposal-times-body").slideUp();
       }
     });
     //newURL needs to come from SQL query after event is created
-
   });
 });
