@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/styles/urlView.css" type="text/css" />
     <script type="text/javascript" src="/scripts/app.js"></script>
-    <script type="text/javascript" src="/scripts/homepage.js"></script>
+    <script type="text/javascript" src="/scripts/proposal-page.js"></script>
 
     <!-- Old CSS params, do not use -->
     <!-- <link rel="stylesheet" href="/styles/responsiveStyle.scss" type="text/css" /> -->
@@ -68,9 +68,9 @@
 
     <!-- Title, description and location information-->
     <div class = "ui text container" id = "proposal-header">
-        <h1>Title</h1>
-        <h3>location</h3>
-        <h2>description</h2>
+        <h1> <%=title%> </h1>
+        <h3> <%=location%></h3>
+        <h2><%=description%></h2>
         <button class ="ui primary button">RSVP Here</button>
     </div>
 
