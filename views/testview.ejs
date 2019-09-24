@@ -31,8 +31,6 @@
   </head>
 
   <body>
-
-
     <!-- Side Bar Menu-->
     <div class="ui left demo vertical inverted sidebar labeled icon menu">
       <a class="item">
@@ -74,14 +72,37 @@
         <h1>Title</h1>
         <h3>location</h3>
         <h2>description</h2>
+        <button class ="ui primary button">RSVP Here</button>
     </div>
 
-    <!-- <div class = "ui container">
-      <div class="ui checkbox">
-        <input type="checkbox" tabindex="0" class="hidden" id = "rsvp">
-        <label>Label</label>
+    <div class="ui hidden divider"></div>
+
+    <!-- Input fields to be toggled when button is hit-->
+    <div class = "ui container" id = "user-authentication">
+      <h2>Name</h2>
+      <div class="ui input">
+        <input type="text" placeholder="Name...">
       </div>
-    </div> -->
+      <h2>Email</h2>
+      <div class="ui input">
+        <input type="text" placeholder="Email...">
+      </div>
+
+      <div class="ui hidden divider"></div>
+
+      <div class="ui checkbox">
+      <input type="checkbox" tabindex="0" class="hidden">
+      <label>RSVP for SEPT 29th</label>
+
+      <div class="ui hidden divider"></div>
+
+      <button class ="ui primary button" type = "submit">Confirm Here</button>
+    </div>
+
+    <script>
+      $('.ui.checkbox').checkbox('toggle')
+    </script>
+
 
     </div>
   </body>

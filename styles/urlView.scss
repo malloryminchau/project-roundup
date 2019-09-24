@@ -1,8 +1,8 @@
 @media (max-width: 600px) {
 
-    body {
-      font-size: 20rem;
-    }
+    // body {
+    //   font-size: 20rem;
+    // }
 
     div#proposal-header h1 {
       margin: 0.25em;
@@ -19,10 +19,27 @@
       font-size: 1rem
     }
 
+    div.ui.input {
+      padding: 0em;
+    }
 
-}
+    h2 {
+      font-size: 1.25em;
+    }
+
+
+
+} // End of media small size
 
 div#proposal-header {
+  text-align: center;
+}
+
+div#rsvp {
+  text-align: center;
+}
+
+div#user-authentication {
   text-align: center;
 }
 
