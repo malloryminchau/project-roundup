@@ -98,10 +98,10 @@
       <h2>Enter a Name for Your Event</h2>
       <div class="ui input"> <input id="event-name" type="text" placeholder="Event Name..."> </div>
       <h2>Enter a description for your event</h2>
-      <div class="ui input"> <input id="event-description" id="search-term" type="text" placeholder="Description...">
+      <div class="ui input"> <input id="event-description" type="text" placeholder="Description...">
       </div>
       <h2>Enter your event location</h2>
-      <div class="ui input"> <input id="event-location" type="text" placeholder="Location..."> </div>
+      <div class="ui input"> <input type="text" id="event-location" placeholder="Location..."> </div>
       <div class="ui hidden divider"></div>
       <button type="submit" class="ui primary button" id="description-location-next">Save</button>
     </form>
@@ -135,13 +135,13 @@
   <!-- Google Maps API -->
   <script>
     function activatePlacesSearch() {
-      let input = document.getElementById("search-term");
-      let autoComplete = new google.maps.places.Autocomplete(input);
-    }
+      var input = document.getElementById('event-location');
+      var autocomplete = new google.maps.places.Autocomplete(input);
+    };
 
   </script>
   <script type="text/javascript"
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2LSo6oMcJCYarA5o8Xlc3S0CTztsma7A&libraries=places&callback=activatePlacesSearch">
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyACYXbgQD7bienLXAuDPzyXthWtmOmC4yc&libraries=places&callback=activatePlacesSearch">
   </script>
 </body>
 
