@@ -1,5 +1,7 @@
 // load .env data into process.env
 require('dotenv').config();
+const createUsers = require('./lib/createUsers.js')
+const createEventProposals = require('./lib/createEventProposals.js')
 
 // Web server config
 const PORT       = process.env.PORT || 8080;
@@ -54,6 +56,32 @@ app.get("/", (req, res) => {
 app.get("/testview", (req, res) => {
   res.render("testview");
 });
+
+app.post("/api/name", (req, res) => {
+  // console.log(req.body.nameInput[0])
+  // console.log(req.body.nameInput[1])
+  let email = req.body.nameInput[1]
+
+  createUsers.createEventProposalsUsers(db, req.body.nameInput[0], req.body.nameInput[1])
+  return res.send(email)
+
+})
+
+function generateRandomString() { // this function generates a random 10 character string of alphanumeric characters
+  let stringId = '';
+  let alphaNumeric = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0987654321';
+  for (let i = 0; i < 10; i++) {
+    stringId += alphaNumeric.charAt(Math.floor(Math.random() * alphaNumeric.length));
+  }
+  return stringId;
+}
+
+app.post("/api/eventdesc", (req, res) => {
+  console.log('post event desc')
+  let url = generateRandomString();
+  createEventProposals.createDescription(db, req.body.eventInput[0], req.body.eventInput[1], req.body.eventInput[2], req.body.eventInput[3], url)
+  res.send('bla')
+})
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);
