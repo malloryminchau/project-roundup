@@ -3,6 +3,6 @@ CREATE TABLE availabilities (
   id SERIAL PRIMARY KEY NOT NULL,
   event_id INTEGER REFERENCES event_proposals(id) ON DELETE CASCADE,
   user_id INTEGER REFERENCES people(id) ON DELETE CASCADE,
-  time TIMESTAMP,
+  time VARCHAR(255),
   availability BOOLEAN DEFAULT FALSE
 );

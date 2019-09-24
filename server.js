@@ -2,6 +2,7 @@
 require('dotenv').config();
 const createUsers = require('./lib/createUsers.js')
 const createEventProposals = require('./lib/createEventProposals.js')
+const createAvailabilities = require('./lib/createAvailabilities.js')
 
 // Web server config
 const PORT       = process.env.PORT || 8080;
@@ -80,7 +81,13 @@ app.post("/api/eventdesc", (req, res) => {
   console.log('post event desc')
   let url = generateRandomString();
   createEventProposals.createDescription(db, req.body.eventInput[0], req.body.eventInput[1], req.body.eventInput[2], req.body.eventInput[3], url)
-  res.send('bla')
+  res.send(url)
+})
+
+app.post("/api/availabilities", (req, res) => {
+  // console.log(req.body.availabilities[1])
+  createAvailabilities.createAvailabilities(db, req.body.availabilities[0], req.body.availabilities[1])
+  res.send("blah")
 })
 
 app.listen(PORT, () => {

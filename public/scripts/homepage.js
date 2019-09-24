@@ -45,7 +45,8 @@
         url: '/api/eventdesc',
         method: 'POST',
         data: {eventInput},
-        success: function() {
+        success: function(response) {
+          window.localStorage.setItem('url', response)
           $('#event-description-body').slideUp();
           $('#proposal-times-body').slideDown();
         }
@@ -53,20 +54,23 @@
 
     })
 
-    $('#proposal-calendar').on('click', (event) => {
+    $("#proposal-sav-button").on("click", event => {
       event.preventDefault();
-      // router.post("/:newURL", (req, res) => {
-        // $.ajax({
-        //   url: `${'url-name-based-on-database'}`,
-        //   method: 'POST',
-        //   data: 'proposals',
-        //   success: function() {
-        //     addNewProposal('fill-in-parameters');
-        //   }
-        // })
-        //newURL needs to come from SQL query after event is created
+      console.log(window.localStorage.getItem('url'))
+      let url = window.localStorage.getItem('url');
+      console.log($("#proposal-calendar").val())
+      const availabilities = [$("#proposal-calendar").val(), url];
 
-      })
+      $.ajax({
+        url: `/api/availabilities`,
+        method: "POST",
+        data: { availabilities },
+        success: function() {
+          $("#proposal-times-body").slideUp();
+        }
+      });
+    });
+
     })
 
 
