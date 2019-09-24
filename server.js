@@ -3,6 +3,7 @@ require('dotenv').config();
 const createUsers = require('./lib/createUsers.js')
 const createEventProposals = require('./lib/createEventProposals.js')
 const createAvailabilities = require('./lib/createAvailabilities.js')
+const renderPageInfo = require('./lib/renderPageInfo.js')
 
 // Web server config
 const PORT       = process.env.PORT || 8080;
@@ -99,7 +100,15 @@ app.get("/:url", (req, res) => {
   // let urlsIndex = { url: req.body }
   console.log("reqparams"+ req.params.url)
   console.log("about to render or redirect to new page")
-  //console.log(req.body)
-  res.render("testview")
+  let url = req.params.url
+  renderPageInfo.renderPageInfo(db, url)
+  //return titleValue
+  .then(response => {
+    let title = (response.rows[0].title);
+    res.render("testview", { url: req.params.url, title: title, location: response.rows[0].location, description: response.rows[0].description})
+  }) .catch(error => {
+    console.log(error)
+  })
+
 })
 
