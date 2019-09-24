@@ -76,7 +76,7 @@
     </div>
 
     <!-- Creator information Form -->
-    <div class = "create-event-body ui text container" id="name-email-body">
+    <div class = "create-event-body ui text container" id="name-email-body" style = "display: none">
 
       <h1>Your Information</h1>
       <form method="POST" action="/">
@@ -88,10 +88,10 @@
         <button type = "submit" class="ui primary button" id="name-email-next">Save</button>
       </form>
     </div>
-    <script>$('#name-email-body').slideUp(0)</script>
+    <!-- <script>$('#name-email-body').slideUp(0)</script> -->
 
     <!-- Event information Form -->
-    <div class = "create-event-body ui text container" id="event-description-body">
+    <div class = "create-event-body ui text container" id="event-description-body" style = "display: none">
       <h1>Event Details</h1>
       <form method="POST" action="/">
         <h2>Enter a Name for Your Event</h2>
@@ -104,22 +104,26 @@
         <button type = "submit" class="ui primary button" id="description-location-next">Save</button>
       </form>
     </div>
-    <script>$('#event-description-body').slideUp(0)</script>
+    <!-- <script>$('#event-description-body').slideUp(0)</script> -->
+
+
     <!-- Event Availability Creation Form -->
-    <div class = "create-event-body ui text container" id="proposal-times-body">
+    <div class = "create-event-body ui text container" id="proposal-times-body" style = "display: none">
       <h1>Possible Event Times</h1>
       <form method="POST" action="/">
 
         <div class="ui calendar" id="standard_calendar">
           <div class="ui input left icon">
             <i class="calendar icon"></i>
-            <input type="text" placeholder="Date" id="proposal-calendar">
+            <input type="text" placeholder="Date" id="proposal-calendar"> <button class ="ui primary button" id="proposal-save-button">Add Availability</button>
           </div>
         </div>
-        <button type = "submit" class="ui primary button" id="proposal-sav-button">Save</button>
+        <div class="ui hidden divider"></div>
       </form>
+
+      <button type = "submit" class="ui primary button">Save</button>
     </div>
-    <script>$('#proposal-times-body').slideUp(0)</script>
+    <!-- <script>$('#proposal-times-body').slideUp(0)</script> -->
     <script>
       $('#standard_calendar')
         .calendar()

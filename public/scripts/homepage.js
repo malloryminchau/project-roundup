@@ -54,7 +54,7 @@
 
     })
 
-    $("#proposal-sav-button").on("click", event => {
+    $("#proposal-save-button").on("click", event => {
       event.preventDefault();
       console.log(window.localStorage.getItem('url'))
       let url = window.localStorage.getItem('url');
@@ -66,7 +66,7 @@
         method: "POST",
         data: { availabilities },
         success: function() {
-          $("#proposal-times-body").slideUp();
+          // $("#proposal-times-body").slideUp();
         }
       });
     });
