@@ -66,6 +66,7 @@
         method: "POST",
         data: { availabilities },
         success: function() {
+          $("#proposal-calendar").val("");
           // $("#proposal-times-body").slideUp();
         }
       });
