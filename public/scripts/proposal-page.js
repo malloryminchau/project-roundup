@@ -3,6 +3,7 @@ let url = hrefVal.slice(28)
 
 
 
+
 $(document).ready(() => {
   // $('#rsvp').on('click', (event) => {
   //   $.ajax({
@@ -24,15 +25,18 @@ $(document).ready(() => {
       method: 'GET',
       data: {url: url},
       success: function(response) {
+        console.log(response);
+
+          response.forEach(element => {
+            $('#user-authentication').append(`<div class="ui checkbox">
+            <input type="checkbox" tabindex="0" class="hidden">
+            <label>${element.time}</label>`)
+          });
         console.log('WEEEEEOEOEOEOEOEOEOOOO')
         console.log(response)
       }
     })
 
   })
-
-
-
-
 
 })
