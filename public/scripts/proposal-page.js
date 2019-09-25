@@ -26,12 +26,23 @@ $(document).ready(() => {
       data: {url: url},
       success: function(response) {
         console.log(response);
+        $('#user-authentication').toggle('slide')
+        let optionID = 0
 
           response.forEach(element => {
-            $('#user-authentication').append(`<div class="ui checkbox">
-            <input type="checkbox" tabindex="0" class="hidden">
-            <label>${element.time}</label>`)
+            optionID = optionID + 1;
+
+            $('#options').append(`<div class="ui checkbox">
+            <input type="checkbox" tabindex="0" class="hidden" id='${optionID}'>
+            <label>${element.time}</label>
+
+            <script>
+            $('.ui.checkbox').checkbox('toggle')
+            </script>
+            `)
           });
+
+
         console.log('WEEEEEOEOEOEOEOEOEOOOO')
         console.log(response)
       }

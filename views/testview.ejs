@@ -77,7 +77,7 @@
     <div class="ui hidden divider"></div>
 
     <!-- Input fields to be toggled when button is hit-->
-    <div class = "ui container" id = "user-authentication">
+    <div class = "ui text container" id = "user-authentication" style = "display: none">
       <h2>Name</h2>
       <div class="ui input">
         <input type="text" placeholder="Name...">
@@ -89,18 +89,20 @@
 
       <div class="ui hidden divider"></div>
 
-      <div class="ui checkbox">
+      <div class = "ui container" id = "options"></div>
+
+      <!-- <div class="ui checkbox">
       <input type="checkbox" tabindex="0" class="hidden">
-      <label>RSVP for SEPT 29th</label>
+      <label>RSVP for SEPT 29th</label> -->
 
       <div class="ui hidden divider"></div>
 
       <button class ="ui primary button" type = "submit">Confirm Here</button>
     </div>
 
-    <script>
-      $('.ui.checkbox').checkbox('toggle')
-    </script>
+    <!-- <script>
+      $('#optionID').checkbox('toggle')
+    </script> -->
 
 
     </div>
