@@ -48,11 +48,9 @@ $('#confirm-user').on('click', (event) => {
       $('#options').append(`<div class="ui checkbox" id='${optionID}'>
       <input type="checkbox" tabindex="0" class="hidden" >
       <label>${element.time}</label>
-
       <script>
       $('.ui.checkbox').checkbox('enable')
       </script>
-
       `)
     })
   }
