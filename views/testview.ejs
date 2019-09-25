@@ -69,7 +69,9 @@
     <!-- Title, description and location information-->
     <div class = "ui text container" id = "proposal-header">
         <h1> <%=title%> </h1>
-        <h3> <%=location%></h3>
+        <h3><a href="abc" target="_blank">
+          <%=location%>
+        </a></h3>
         <h2><%=description%></h2>
         <button class ="ui primary button" id="rsvp">RSVP Here</button>
     </div>
@@ -100,11 +102,16 @@
       <button class ="ui primary button" type = "submit">Confirm Here</button>
     </div>
 
-    <!-- <script>
-      $('#optionID').checkbox('toggle')
-    </script> -->
-
 
     </div>
   </body>
+
+  <script>
+    $('a[href^="abc"]').each(function () {
+      let newUrl =
+        "http://maps.google.com/maps?q=" + encodeURIComponent($(this).text());
+      $(this).attr("href", newUrl);
+    });
+
+  </script>
 </html>
