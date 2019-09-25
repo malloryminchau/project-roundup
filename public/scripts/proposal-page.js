@@ -25,6 +25,7 @@ $(document).ready(() => {
       data: {url: url},
       success: function(response) {
         console.log('WEEEEEOEOEOEOEOEOEOOOO')
+        console.log(response)
       }
     })
 
