@@ -19,43 +19,52 @@ $(document).ready(() => {
 
   $('#rsvp').on('click', (event) => {
     event.preventDefault();
-    console.log(url)
-    $.ajax({  // adds the event name and desc and location to database
-      url: '/api/testrender',
-      method: 'GET',
-      data: {url: url},
-      success: function(response) {
-        console.log(response);
-        $('#user-authentication').toggle('slide')
-        let optionID = 0
-
-          response.forEach(element => {
-            optionID = optionID + 1;
-
-            $('#options').append(`<div class="ui checkbox" id='${optionID}'>
-            <input type="checkbox" tabindex="0" class="hidden" >
-            <label>${element.time}</label>
-
-            <script>
-            $('.ui.checkbox').checkbox('enable')
-            </script>
-
-            `)
-
-          });
-
-      }
-    })
-
+    // console.log(url)
+    // console.log(response);
+    $('#user-authentication').toggle('')
+    $('#rsvp').toggle('')
   })
 
-  $('#confirm-rsvp').on('click', (event) => {
+
+$('#confirm-user').on('click', (event) => {
+  event.preventDefault();
+  $('#user-authentication').toggle('')
+  $('#availability-modify').toggle('')
+  $.ajax({  // adds the event name and desc and location to database
+    url: '/api/testrender',
+    method: 'GET',
+    data: {url: url},
+    success: function(response) {
     //console.log($('#1').val())
     console.log($('#1').checkbox('is checked'))
     console.log($('#2').checkbox('is checked'))
     console.log($('#3').checkbox('is checked'))
     console.log($('#4').checkbox('is checked'))
+    let optionID = 0
+
+    response.forEach(element => {
+      optionID = optionID + 1;
+
+      $('#options').append(`<div class="ui checkbox" id='${optionID}'>
+      <input type="checkbox" tabindex="0" class="hidden" >
+      <label>${element.time}</label>
+
+      <script>
+      $('.ui.checkbox').checkbox('enable')
+      </script>
+
+      `)
+    })
+  }
   })
+
+})
+
+$('#confirm-rsvp').on('click', (event) => {
+  event.preventDefault();
+  $('#availability-modify').toggle('')
+  $('#rsvp').toggle('')
+})
 
 
   $('#home-redirect').on('click', (event) => {
@@ -63,3 +72,32 @@ $(document).ready(() => {
   })
 
 }) // end of document ready
+
+
+// Query the db and display results
+
+// });
+
+
+
+
+
+
+
+// Query the db and display results
+// let optionID = 0
+
+// response.forEach(element => {
+//   optionID = optionID + 1;
+
+//   $('#options').append(`<div class="ui checkbox" id='${optionID}'>
+//   <input type="checkbox" tabindex="0" class="hidden" >
+//   <label>${element.time}</label>
+
+//   <script>
+//   $('.ui.checkbox').checkbox('enable')
+//   </script>
+
+//   `)
+
+// });

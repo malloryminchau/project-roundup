@@ -89,7 +89,12 @@ div#options {
   div#options {
     display: flex;
     flex-direction: column;
+  }
 
+  div#availability-modify {
+    display:flex;
+    flex-direction: column;
+    text-align: center;
   }
 
 
