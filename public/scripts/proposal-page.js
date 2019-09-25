@@ -27,8 +27,8 @@ $(document).ready(() => {
       success: function(response) {
         console.log(response);
         $('#user-authentication').toggle('slide')
-        let optionID = 0
 
+        let optionID = 0
           response.forEach(element => {
             optionID = optionID + 1;
 
@@ -55,6 +55,7 @@ $(document).ready(() => {
     console.log($('#2').checkbox('is checked'))
     console.log($('#3').checkbox('is checked'))
     console.log($('#4').checkbox('is checked'))
+    
   })
 
 
