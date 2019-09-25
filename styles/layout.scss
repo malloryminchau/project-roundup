@@ -1,11 +1,31 @@
 // See: https://sass-lang.com/
+$primaryColor: #29586C;
+$primaryButtonColor: #042838;
+$secondaryButtonColor: #C63500;
+$textBackgroundColor: white;
 
-body {
-  background-color: #EEE;
+#navbarsmall {
+  display: none;
+}
 
-  h1 {
-    color: #244751;
-  }
+body{
+  background: #7093A2;
+  background-color: #7093A2;
+}
+
+#create-event-start {
+  background-color: $primaryButtonColor;
+}
+
+div#main-header {
+  padding: 1rem;
+  background: #29586C;
+}
+
+
+div#navbarbig {
+  padding: 1rem;
+  background:#133F53;
 }
 
 .create-event-body {
@@ -17,7 +37,46 @@ body {
   border-width: 2px;
 }
 
+h1#logo{
+  font-size: 3rem;
+  color:white;
+  display: inline;
+
+}
+h1#logo2{
+  font-size: 3rem;
+  color: orangered;
+  display: inline;
+}
+
+h2#slogan{
+  margin-top: 0.5rem;
+}
+
 @media (max-width: 600px) {
+
+  #navbarsmall {
+    padding-bottom: 0.75rem;
+    display: flex;
+    flex-direction: row;
+    background:#133F53;
+    align-items: baseline;
+  }
+
+  #main-header{
+    display:none;
+  }
+
+  #navbarbig {
+    display: none;
+  }
+
+  h1#logo{
+    font-size: 2rem;
+  }
+  h1#logo2{
+    font-size: 2rem;
+  }
 
   h1.ui.inverted.header {
   font-size: 1.5rem;

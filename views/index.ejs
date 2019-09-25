@@ -35,8 +35,48 @@
 
 <body>
 
+    <div class="ui left demo vertical inverted sidebar labeled icon menu" id = "sidebar">
+        <a class="item" id ="home-redirect">
+          <i class="home icon"></i>
+          Home
+        </a>
+        <a class="item">
+          <i class="block layout icon"></i>
+          How to use
+        </a>
+        <a class="item">
+          <i class="smile icon"></i>
+          Create Event
+        </a>
+
+
+      </div>
+
+      <div class = "pusher">
+
+        <div class = "ui basic icon top inverted menu" style= "margin-bottom: 1em" id = "navbarsmall">
+
+            <a id = "toggle" class = "item">
+              <i class = "sidebar icon"></i>
+            </a>
+            <h1 id = "logo">ROUND</h1><h1 id="logo2" style = "color: orangered">UP</h1>
+
+            <div class="right menu">
+            <a>
+                <button class="ui primary button" id="create-event-start" type="submit">Create Event!</button>
+            </a>
+            </div>
+
+            <!-- script to trigger the side bar menu-->
+            <script>
+            $('#toggle').click(function(){
+              $('.ui.sidebar').sidebar('toggle');
+            });
+            </script>
+          </div>
+
   <!-- NAV BAR -->
-  <div class="ui inverted vertical masthead center aligned segment">
+  <div class="ui inverted vertical masthead center aligned segment" id = "navbarbig">
     <div class="ui inverted container">
       <div class="ui large secondary inverted pointing menu">
         <a class="toc item"></a>
@@ -66,10 +106,11 @@
 
 
   <!-- TITLE container -->
-  <div class="ui inverted vertical masthead center aligned segment">
+  <div class="ui inverted vertical masthead center aligned segment" id ="main-header">
     <div class="ui text container" style="margin-bottom: 2em">
-      <h1 class="ui inverted header">ROUND UP</h1>
-      <h2>Round up your mates!</h2>
+            <h1 id = "logo">ROUND</h1>
+            <h1 id = "logo2">UP</h1>
+        <h2 id = "slogan">Round up your mates!</h2>
       <button class="ui huge primary button" id="create-event-start" type="submit">Create Event!</button>
       <br>
       <!-- <i class = "down arrow icon large"></i> -->
@@ -143,6 +184,7 @@
   <!-- <script type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?key=YOURAPIKEY&libraries=places&callback=activatePlacesSearch">
   </script> -->
+  </div>
 </body>
 
 </html>
