@@ -81,6 +81,5 @@ $(document).ready(() => {
     console.log(clientUrl);
     window.location.replace(`/${clientUrl}`);
   });
-
-
+  //Convert address tags to google map links - Michael Jasper 2012
 });
