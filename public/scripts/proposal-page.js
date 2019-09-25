@@ -32,22 +32,34 @@ $(document).ready(() => {
           response.forEach(element => {
             optionID = optionID + 1;
 
-            $('#options').append(`<div class="ui checkbox">
-            <input type="checkbox" tabindex="0" class="hidden" id='${optionID}'>
+            $('#options').append(`<div class="ui checkbox" id='${optionID}'>
+            <input type="checkbox" tabindex="0" class="hidden" >
             <label>${element.time}</label>
 
             <script>
-            $('.ui.checkbox').checkbox('toggle')
+            $('.ui.checkbox').checkbox('enable')
             </script>
+
             `)
+
           });
 
-
-        console.log('WEEEEEOEOEOEOEOEOEOOOO')
-        console.log(response)
       }
     })
 
   })
 
-})
+  $('#confirm-rsvp').on('click', (event) => {
+    //console.log($('#1').val())
+    console.log($('#1').checkbox('is checked'))
+    console.log($('#2').checkbox('is checked'))
+    console.log($('#3').checkbox('is checked'))
+    console.log($('#4').checkbox('is checked'))
+  })
+
+
+  $('#home-redirect').on('click', (event) => {
+    window.location.replace('/');
+  })
+
+}) // end of document ready
