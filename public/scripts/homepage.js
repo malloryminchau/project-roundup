@@ -76,7 +76,7 @@
       event.preventDefault();
       let clientUrl = window.localStorage.getItem('url')
       console.log(clientUrl)
-      window.location.replace(`/${clientUrl}`);
+      window.location.replace(`/event/${clientUrl}`);
     })
 
     })

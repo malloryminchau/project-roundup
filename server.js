@@ -4,6 +4,7 @@ const createUsers = require('./lib/createUsers.js')
 const createEventProposals = require('./lib/createEventProposals.js')
 const createAvailabilities = require('./lib/createAvailabilities.js')
 const renderPageInfo = require('./lib/renderPageInfo.js')
+const renderAvailability = require('./lib/renderAvailability.js')
 
 // Web server config
 const PORT       = process.env.PORT || 8080;
@@ -96,19 +97,31 @@ app.listen(PORT, () => {
 });
 
 
-app.get("/:url", (req, res) => {
+app.get("/event/:url", (req, res) => {
   // let urlsIndex = { url: req.body }
   console.log("reqparams"+ req.params.url)
   console.log("about to render or redirect to new page")
   let url = req.params.url
   renderPageInfo.renderPageInfo(db, url)
-  //return titleValue
   .then(response => {
-    let title = (response.rows[0].title);
-    res.render("testview", { url: req.params.url, title: title, location: response.rows[0].location, description: response.rows[0].description})
+    res.render("testview", { url: req.params.url, title: response.rows[0].title, location: response.rows[0].location, description: response.rows[0].description})
   }) .catch(error => {
     console.log(error)
   })
 
+})
+
+app.get("/api/testrender", (req, res) => {
+  let url = req.query.url
+  console.log(req.query.url)
+  // console.log("the URL is: " + url)
+  renderAvailability.renderAvailability(db, url)
+  .then (response => {
+    console.log(response)
+    console.log("response success")
+    res.send(response.rows)
+  }).catch(error => {
+    console.log(error)
+  })
 })
 
