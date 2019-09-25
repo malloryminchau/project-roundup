@@ -30,16 +30,18 @@ $('#confirm-user').on('click', (event) => {
   event.preventDefault();
   $('#user-authentication').toggle('')
   $('#availability-modify').toggle('')
+  let rsvpData = [$('#name-input').val(), $('#email-input').val()]
+  console.log(rsvpData)
   $.ajax({  // adds the event name and desc and location to database
     url: '/api/testrender',
-    method: 'GET',
-    data: {url: url},
+    method: 'POST',
+    data: {rsvpData: rsvpData},
     success: function(response) {
     //console.log($('#1').val())
-    console.log($('#1').checkbox('is checked'))
-    console.log($('#2').checkbox('is checked'))
-    console.log($('#3').checkbox('is checked'))
-    console.log($('#4').checkbox('is checked'))
+    // console.log($('#1').checkbox('is checked'))
+    // console.log($('#2').checkbox('is checked'))
+    // console.log($('#3').checkbox('is checked'))
+    // console.log($('#4').checkbox('is checked'))
     let optionID = 0
 
     response.forEach(element => {
