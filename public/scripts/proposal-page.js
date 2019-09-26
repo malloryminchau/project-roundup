@@ -13,8 +13,20 @@ $(document).ready(() => {
     method: 'GET',
     data: {url: url},
     success: function(response) {
-      console.log("WOOOOt")
-      console.log(response)
+      let allTimes = []
+      let uniqueTimes = []
+      response.forEach(function(element) {
+        allTimes.push(element.time);
+      })
+      //console.log(allTimes)
+      //uniqueTimes = [... new Set(allTimes)];
+      console.log("UNIQUE TIMES: " + uniqueTimes)
+      allTimes.forEach(function(time) {
+        $('#table-times').append(`
+        <th>${time}</th>
+        `)
+      })
+
     }
   })
 
