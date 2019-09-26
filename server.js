@@ -6,7 +6,7 @@ const createAvailabilities = require('./lib/createAvailabilities.js')
 const renderPageInfo = require('./lib/renderPageInfo.js')
 const renderAvailability = require('./lib/renderAvailability.js')
 const rsvpNameInfo = require('./lib/rsvpNameInfo.js')
-
+const voteInsert = require('./lib/voteInsert.js')
 
 // Web server config
 const PORT       = process.env.PORT || 8080;
@@ -129,4 +129,12 @@ app.get("/api/testrender", (req, res) => {
     console.log(error)
   })
 })
+
+app.post("/api/insertvote", (req, res) => {
+  console.log(req.body.proposalData)
+  res.send('boo')
+})
+
+
+
 
