@@ -1,6 +1,8 @@
 let hrefVal = $(location).attr('href')
 let url = hrefVal.slice(28)
 
+let optionID = 0
+let timeArray = []
 
 
 
@@ -19,6 +21,7 @@ $('#confirm-user').on('click', (event) => {
   $('#user-authentication').toggle('')
   $('#availability-modify').toggle('')
   let rsvpData = [$('#name-input').val(), $('#email-input').val(), url]
+  window.localStorage.setItem('voteemail', $('#email-input').val())
   console.log(rsvpData)
   $.ajax({  // adds the event name and desc and location to database
     url: '/api/testrender',
@@ -31,11 +34,10 @@ $('#confirm-user').on('click', (event) => {
     // console.log($('#2').checkbox('is checked'))
     // console.log($('#3').checkbox('is checked'))
     // console.log($('#4').checkbox('is checked'))
-    let optionID = 0
 
     response.forEach(element => {
       optionID = optionID + 1;
-
+      timeArray.push(element.time)
       $('#options').append(`<div class="ui checkbox" id='${optionID}'>
       <input type="checkbox" tabindex="0" class="hidden" >
       <label>${element.time}</label>
@@ -46,13 +48,24 @@ $('#confirm-user').on('click', (event) => {
     })
   }
   })
-
 })
 
 $('#confirm-rsvp').on('click', (event) => {
   event.preventDefault();
   $('#availability-modify').toggle('')
   $('#rsvp').toggle('')
+  let booleanArray = []
+  for (let i = 1; i <= optionID; i++) {
+    booleanArray.push($(`#${i}`).checkbox('is checked'))
+    // timeArray.push($(`#${i}`))
+    console.log($(`#${i}`).checkbox('is checked'))
+  }
+  console.log(booleanArray)
+  console.log(timeArray)
+  // $.ajax({
+  //   url: '/api/rsvpconfirm',
+  //   method: 'PUSH'
+  // })
 })
 
 
