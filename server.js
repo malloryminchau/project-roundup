@@ -132,6 +132,7 @@ app.get("/api/testrender", (req, res) => {
 
 app.post("/api/insertvote", (req, res) => {
   console.log(req.body.proposalData)
+  voteInsert.voteInsert(db, req.body.proposalData[0], req.body.proposalData[1], req.body.proposalData[2], req.body.proposalData[3])
   res.send('boo')
 })
 
