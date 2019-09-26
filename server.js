@@ -7,6 +7,7 @@ const renderPageInfo = require('./lib/renderPageInfo.js')
 const renderAvailability = require('./lib/renderAvailability.js')
 const rsvpNameInfo = require('./lib/rsvpNameInfo.js')
 const voteInsert = require('./lib/voteInsert.js')
+const editVotePage = require('./lib/editVotePage.js')
 
 // Web server config
 const PORT       = process.env.PORT || 8080;
@@ -136,6 +137,9 @@ app.post("/api/insertvote", (req, res) => {
   res.send('boo')
 })
 
+app.post("/api/editvote", (req, res) => {
 
+  editVotePage.editVotePage(db, req.body.proposalData[0], req.body.proposalData[1], req.body.proposalData[2], req.body.proposalData[3])
+})
 
 

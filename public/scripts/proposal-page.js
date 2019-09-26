@@ -23,6 +23,7 @@ $(document).ready(() => {
     let rsvpData = [$('#name-input').val(), $('#email-input').val(), url]
     window.localStorage.setItem('voteemail', $('#email-input').val())
     console.log(rsvpData)
+    $( 'div' ).remove('.checkbox');
     $.ajax({  // adds the event name and desc and location to database
       url: '/api/testrender',
       method: 'GET',
@@ -34,7 +35,8 @@ $(document).ready(() => {
       // console.log($('#2').checkbox('is checked'))
       // console.log($('#3').checkbox('is checked'))
       // console.log($('#4').checkbox('is checked'))
-
+      optionID = 0
+      $('#options').empty();
       response.forEach(element => {
         optionID = optionID + 1;
         timeArray.push(element.time)
@@ -50,6 +52,7 @@ $(document).ready(() => {
     })
   })
 
+  // submit form for new vote user
   $('#confirm-rsvp').on('click', (event) => {
     event.preventDefault();
     $('#availability-modify').toggle('')
@@ -78,6 +81,7 @@ $(document).ready(() => {
     }
   })
 
+  // toggles down the editor container
   $('#edit-rsvp').on('click', (event) => {
     event.preventDefault()
     console.log(url)
@@ -86,9 +90,28 @@ $(document).ready(() => {
 
   $('#edit-rsvp-submit').on('click', (event) => {
     event.preventDefault()
-
-    
-
+    let booleanArray = []
+    for (let i = 1; i <= optionID; i++) {
+      booleanArray.push($(`#${i}`).checkbox('is checked'))
+      // timeArray.push($(`#${i}`))
+      console.log($(`#${i}`).checkbox('is checked'))
+    }
+    console.log(booleanArray)
+    console.log(timeArray)
+    let email = window.localStorage.getItem('voteemail')
+    for (let i = 1; i <= optionID; i++) {
+      let proposalData = []
+      proposalData.push(url, email, timeArray[i-1], booleanArray[i-1])
+      console.log(proposalData)
+      $.ajax({
+        url: '/api/editvote',
+        method: 'POST',
+        data: {proposalData: proposalData},
+        success: function(response) {
+          console.log("data has been sent successfully")
+        }
+      })
+    }
   })
 
 
