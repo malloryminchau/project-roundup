@@ -67,6 +67,7 @@ $('#confirm-rsvp').on('click', (event) => {
     let proposalData = []
     proposalData.push(url, email, timeArray[i-1], booleanArray[i-1])
     console.log(proposalData)
+    
   }
   // $.ajax({
   //   url: '/api/rsvpconfirm',
