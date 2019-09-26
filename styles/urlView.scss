@@ -1,3 +1,17 @@
+$primaryColor: #29586C;
+$primaryButtonColor: #042838;
+$secondaryButtonColor: #C63500;
+$textBackgroundColor: #f9f9f9;
+$fieldButtonColor: #29586C;
+
+#rsvp {
+  background-color: $primaryButtonColor;
+}
+
+#edit-rsvp {
+  background-color: $primaryButtonColor;
+}
+
 a#toggle {
   margin-right: 3rem;
 }
