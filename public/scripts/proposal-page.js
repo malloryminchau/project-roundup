@@ -5,17 +5,6 @@ let url = hrefVal.slice(28)
 
 
 $(document).ready(() => {
-  // $('#rsvp').on('click', (event) => {
-  //   $.ajax({
-  //     url: '/api/testrender',
-  //     method: 'POST',
-  //     data: {url},
-  //     success: function() {
-  //       console.log('WOOOOOOOT')
-  //     }
-  //   })
-  // })
-
 
   $('#rsvp').on('click', (event) => {
     event.preventDefault();
@@ -25,21 +14,23 @@ $(document).ready(() => {
     $('#rsvp').toggle('')
   })
 
-
 $('#confirm-user').on('click', (event) => {
   event.preventDefault();
   $('#user-authentication').toggle('')
   $('#availability-modify').toggle('')
+  let rsvpData = [$('#name-input').val(), $('#email-input').val(), url]
+  console.log(rsvpData)
   $.ajax({  // adds the event name and desc and location to database
     url: '/api/testrender',
     method: 'GET',
-    data: {url: url},
+    data: {rsvpData: rsvpData},
     success: function(response) {
+      console.log("THIS IS THE RESPONSE I AM LOOKING FOR: " + response)
     //console.log($('#1').val())
-    console.log($('#1').checkbox('is checked'))
-    console.log($('#2').checkbox('is checked'))
-    console.log($('#3').checkbox('is checked'))
-    console.log($('#4').checkbox('is checked'))
+    // console.log($('#1').checkbox('is checked'))
+    // console.log($('#2').checkbox('is checked'))
+    // console.log($('#3').checkbox('is checked'))
+    // console.log($('#4').checkbox('is checked'))
     let optionID = 0
 
     response.forEach(element => {
@@ -70,32 +61,3 @@ $('#confirm-rsvp').on('click', (event) => {
   })
 
 }) // end of document ready
-
-
-// Query the db and display results
-
-// });
-
-
-
-
-
-
-
-// Query the db and display results
-// let optionID = 0
-
-// response.forEach(element => {
-//   optionID = optionID + 1;
-
-//   $('#options').append(`<div class="ui checkbox" id='${optionID}'>
-//   <input type="checkbox" tabindex="0" class="hidden" >
-//   <label>${element.time}</label>
-
-//   <script>
-//   $('.ui.checkbox').checkbox('enable')
-//   </script>
-
-//   `)
-
-// });

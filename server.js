@@ -5,6 +5,7 @@ const createEventProposals = require('./lib/createEventProposals.js')
 const createAvailabilities = require('./lib/createAvailabilities.js')
 const renderPageInfo = require('./lib/renderPageInfo.js')
 const renderAvailability = require('./lib/renderAvailability.js')
+const rsvpNameInfo = require('./lib/rsvpNameInfo.js')
 
 // Web server config
 const PORT       = process.env.PORT || 8080;
@@ -112,14 +113,17 @@ app.get("/event/:url", (req, res) => {
 })
 
 app.get("/api/testrender", (req, res) => {
-  let url = req.query.url
-  console.log(req.query.url)
+  let rsvpData = req.query.rsvpData
+  let url = req.query.rsvpData[2]
+  console.log("1", req.query.url)
   // console.log("the URL is: " + url)
   renderAvailability.renderAvailability(db, url)
   .then (response => {
     console.log(response)
     console.log("response success")
     res.send(response.rows)
+    rsvpNameInfo.rsvpNameInfo(db, req.query.rsvpData[0], req.query.rsvpData[1])
+
   }).catch(error => {
     console.log(error)
   })
