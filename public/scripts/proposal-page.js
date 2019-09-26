@@ -30,11 +30,7 @@ $(document).ready(() => {
       data: {rsvpData: rsvpData},
       success: function(response) {
         console.log("THIS IS THE RESPONSE I AM LOOKING FOR: " + response)
-      //console.log($('#1').val())
-      // console.log($('#1').checkbox('is checked'))
-      // console.log($('#2').checkbox('is checked'))
-      // console.log($('#3').checkbox('is checked'))
-      // console.log($('#4').checkbox('is checked'))
+
       optionID = 0
       $('#options').empty();
       response.forEach(element => {
@@ -85,36 +81,59 @@ $(document).ready(() => {
   $('#edit-rsvp').on('click', (event) => {
     event.preventDefault()
     $('#edit-rsvp-authentication').toggle('')
+    let editData = url
+    console.log("THE URL IS: " +url)
+    $.ajax({  // adds the event name and desc and location to database
+      url: '/api/editvoteinput',
+      method: 'GET',
+      data: {editData: editData},
+      success: function(response) {
+        console.log("THIS IS THE RESPONSE I AM LOOKING FOR: " + response)
+      optionID = 0
+      $('#edit-options').empty();
+      response.forEach(element => {
+        optionID = optionID + 1;
+        timeArray.push(element.time)
+        $('#edit-options').append(`<div class="ui checkbox" id='${optionID}'>
+        <input type="checkbox" tabindex="0" class="hidden" >
+        <label>${element.time}</label>
+        <script>
+        $('.ui.checkbox').checkbox('enable')
+        </script>
+        `)
+      })
+    }
+    })
 
     // console.log(url)
     //toggle stuff
   })
 
-  $('#edit-rsvp-submit').on('click', (event) => {
-    event.preventDefault()
-    let booleanArray = []
-    for (let i = 1; i <= optionID; i++) {
-      booleanArray.push($(`#${i}`).checkbox('is checked'))
-      // timeArray.push($(`#${i}`))
-      console.log($(`#${i}`).checkbox('is checked'))
-    }
-    console.log(booleanArray)
-    console.log(timeArray)
-    let email = window.localStorage.getItem('voteemail')
-    for (let i = 1; i <= optionID; i++) {
-      let proposalData = []
-      proposalData.push(url, email, timeArray[i-1], booleanArray[i-1])
-      console.log(proposalData)
-      $.ajax({
-        url: '/api/editvote',
-        method: 'POST',
-        data: {proposalData: proposalData},
-        success: function(response) {
-          console.log("data has been sent successfully")
-        }
-      })
-    }
-  })
+  // $('#edit-rsvp-submit').on('click', (event) => {
+  //   event.preventDefault()
+  //   let booleanArray = []
+  //   for (let i = 1; i <= optionID; i++) {
+  //     booleanArray.push($(`#${i}`).checkbox('is checked'))
+  //     // timeArray.push($(`#${i}`))
+  //     console.log($(`#${i}`).checkbox('is checked'))
+  //   }
+  //   console.log(booleanArray)
+  //   console.log(timeArray)
+  //   let email = window.localStorage.getItem('voteemail')
+  //   for (let i = 1; i <= optionID; i++) {
+  //     let proposalData = []
+  //     proposalData.push(url, email, timeArray[i-1], booleanArray[i-1])
+  //     console.log(proposalData)
+  //     $.ajax({
+  //       url: '/api/editvote',
+  //       method: 'POST',
+  //       data: {proposalData: proposalData},
+  //       success: function(response) {
+  //         console.log("data has been sent successfully")
+  //       }
+  //     })
+  //   }
+  // })
 
 
   $('#home-redirect').on('click', (event) => {

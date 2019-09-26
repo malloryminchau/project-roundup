@@ -165,14 +165,12 @@ app.get("/api/testrender", (req, res) => {
   let url = req.query.rsvpData[2];
   console.log("1", req.query.url);
   // console.log("the URL is: " + url)
-  renderAvailability
-    .renderAvailability(db, url)
+  renderAvailability.renderAvailability(db, url)
     .then(response => {
       console.log(response);
       console.log("response success");
       res.send(response.rows);
-      rsvpNameInfo.rsvpNameInfo(db, req.query.rsvpData[0], req.query.rsvpData[1]
-      );
+      rsvpNameInfo.rsvpNameInfo(db, req.query.rsvpData[0], req.query.rsvpData[1]);
     })
     .catch(error => {
       console.log(error);
@@ -183,6 +181,15 @@ app.post("/api/insertvote", (req, res) => {
   console.log(req.body.proposalData)
   voteInsert.voteInsert(db, req.body.proposalData[0], req.body.proposalData[1], req.body.proposalData[2], req.body.proposalData[3])
   res.send('boo')
+})
+
+app.get("/api/editvoteinput", (req, res) => {
+  let url = req.query.editData
+  console.log("I HAVE RECEIVED THE AJAX REQUEST AND AM ABOUT TO WRITE: " + url)
+  renderAvailability.renderAvailability(db, url)
+  .then(response => {
+    res.send(response.rows)
+  })
 })
 
 app.post("/api/editvote", (req, res) => {
