@@ -8,6 +8,17 @@ let timeArray = []
 
 $(document).ready(() => {
 
+  $.ajax({
+    url: '/api/loadtable',
+    method: 'GET',
+    data: {url: url},
+    success: function(response) {
+      console.log("WOOOOt")
+      console.log(response)
+    }
+  })
+
+
   $('#rsvp').on('click', (event) => {
     event.preventDefault();
     // console.log(url)

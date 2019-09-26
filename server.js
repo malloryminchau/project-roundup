@@ -8,6 +8,7 @@ const renderAvailability = require("./lib/renderAvailability.js");
 const rsvpNameInfo = require("./lib/rsvpNameInfo.js");
 const voteInsert = require("./lib/voteInsert.js");
 const editVotePage = require("./lib/editVotePage.js")
+const renderTable = require("./lib/renderTable.js")
 
 //Twilio API
 const sgMail = require("@sendgrid/mail");
@@ -201,4 +202,11 @@ app.post("/api/editvote", (req, res) => {
   })
 })
 
-
+app.get("/api/loadtable", (req, res) => {
+  console.log("HEEERE ", req.query.url)
+  renderTable.renderTable(db, req.query.url)
+  .then(response => {
+    // console.log(response)
+    res.send(response.rows)
+  })
+})
