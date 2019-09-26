@@ -5,6 +5,9 @@ $secondaryButtonColor: #C63500;
 $textBackgroundColor: #f9f9f9;
 $fieldButtonColor: #29586C;
 
+p {
+  color: $textBackgroundColor;
+}
 
 //Headers
 .title {
@@ -53,16 +56,23 @@ button#save-redirect {
 }
 
 body#body{
-  background: #7093A2;
+  background: #29586C;
   //background-color: #7093A2;
 }
 
 
 div#main-header {
+  display: flexbox;
+  // margin-left: 7em;
+  // width: 40%;
   padding: 1rem;
   background: #29586C;
   // background-image: url('../Pictures/table-wine.jpg');
-  z-index: 200;
+  //z-index: 200;
+}
+
+div#main-header p {
+  float: right;
 }
 
 
@@ -85,13 +95,13 @@ div#navbarbig {
 
 // LOGOS AND SLOGAN COLOURS
 h1#logo{
-  font-size: 3rem;
+  font-size: 5rem;
   color:white;
   display: inline;
 
 }
 h1#logo2{
-  font-size: 3rem;
+  font-size: 5rem;
   color: orangered;
   display: inline;
 }
@@ -112,8 +122,6 @@ h2#slogan{
 #proposal-times-body {
   background: $textBackgroundColor;
 }
-
-
 
 // phone size responsive design
 @media (max-width: 600px) {
