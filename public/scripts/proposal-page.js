@@ -75,12 +75,7 @@ $('#confirm-rsvp').on('click', (event) => {
         console.log("data has been sent successfully")
       }
     })
-
   }
-  // $.ajax({
-  //   url: '/api/rsvpconfirm',
-  //   method: 'PUSH'
-  // })
 })
 
 
