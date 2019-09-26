@@ -112,15 +112,18 @@ app.get("/event/:url", (req, res) => {
 
 })
 
-app.post("/api/testrender", (req, res) => {
-  let rsvpData = req.body.rsvpData
-  console.log("1", req.body.rsvpData)
+app.get("/api/testrender", (req, res) => {
+  let rsvpData = req.query.rsvpData
+  let url = req.query.rsvpData[2]
+  console.log("1", req.query.url)
   // console.log("the URL is: " + url)
-  rsvpNameInfo.rsvpNameInfo(db, req.body.rsvpData[0], req.body.rsvpData[1])
+  renderAvailability.renderAvailability(db, url)
   .then (response => {
     console.log(response)
     console.log("response success")
     res.send(response.rows)
+    rsvpNameInfo.rsvpNameInfo(db, req.query.rsvpData[0], req.query.rsvpData[1])
+
   }).catch(error => {
     console.log(error)
   })
