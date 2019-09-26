@@ -15,6 +15,13 @@
       $('#name-email-body').slideDown(); //name fill in form slides down
     })
 
+    $('#create-event-start2').on('click', (event) => { //new-event-button is a stand in for now before route id is selected
+      event.preventDefault();
+      console.log("Hello I am working!")
+      // $('#help-desc-body').toggleUp(); //change command to make sure this is toggled UP when this is clicked (default on all stages)
+      $('#name-email-body').slideDown(); //name fill in form slides down
+    })
+
 // NEXT BUTTON FROM NAME ENTRY FIELD when clicked the name field should toggle away and the new form will toggle down
     $('#name-email-next').on('click', (event) => {
       event.preventDefault();

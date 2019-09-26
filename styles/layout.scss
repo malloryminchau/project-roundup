@@ -2,20 +2,57 @@
 $primaryColor: #29586C;
 $primaryButtonColor: #042838;
 $secondaryButtonColor: #C63500;
-$textBackgroundColor: white;
+$textBackgroundColor: #f9f9f9;
+$fieldButtonColor: #29586C;
+
+
+//Headers
+.title {
+  color: $primaryButtonColor;
+}
+
+h2 {
+  color: $primaryButtonColor;
+}
+
+
+//Primary Create Buttons
+#create-event-start {
+  background-color: $primaryButtonColor;
+}
+
+#create-event-start2 {
+  background-color: $primaryButtonColor;
+}
+
+
+// buttons colors
+button#name-email-next {
+  background-color: $fieldButtonColor;
+}
+
+button#description-location-next {
+  background-color: $fieldButtonColor;
+}
+
+button#proposal-save-button {
+  background-color: $fieldButtonColor;
+}
+
+button#save-redirect {
+  background-color: $fieldButtonColor;
+}
+
 
 #navbarsmall {
   display: none;
 }
 
-body{
+body#body{
   background: #7093A2;
-  background-color: #7093A2;
+  //background-color: #7093A2;
 }
 
-#create-event-start {
-  background-color: $primaryButtonColor;
-}
 
 div#main-header {
   padding: 1rem;
@@ -30,6 +67,8 @@ div#navbarbig {
   background:#133F53;
 }
 
+
+//Container to hold events
 .create-event-body {
   display: flex;
   text-align: center;
@@ -39,6 +78,8 @@ div#navbarbig {
   border-width: 2px;
 }
 
+
+// LOGOS AND SLOGAN COLOURS
 h1#logo{
   font-size: 3rem;
   color:white;
@@ -55,6 +96,22 @@ h2#slogan{
   margin-top: 0.5rem;
 }
 
+//Text boxes to be offwhite
+#name-email-body {
+  background: $textBackgroundColor;
+}
+
+#event-description-body {
+  background: $textBackgroundColor;
+}
+
+#proposal-times-body {
+  background: $textBackgroundColor;
+}
+
+
+
+// phone size responsive design
 @media (max-width: 600px) {
 
   #navbarsmall {

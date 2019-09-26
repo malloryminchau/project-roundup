@@ -33,7 +33,7 @@
 
 </head>
 
-<body>
+<body  id="body">
 
     <div class="ui left demo vertical inverted sidebar labeled icon menu" id = "sidebar">
         <a class="item" id ="home-redirect">
@@ -63,7 +63,7 @@
 
             <div class="right menu">
             <a>
-                <button class="ui primary button" id="create-event-start" type="submit">CREATE EVENT</button>
+                <button class="ui primary button" id="create-event-start2" type="submit">CREATE EVENT</button>
             </a>
             </div>
 
@@ -110,7 +110,7 @@
     <div class="ui text container" style="margin-bottom: 2em">
             <h1 id = "logo">ROUND</h1>
             <h1 id = "logo2">UP</h1>
-        <h2 id = "slogan">Round up your mates!</h2>
+        <h2 id = "slogan">Make your next event a success</h2>
       <button class="ui huge primary button" id="create-event-start" type="submit">Create Event!</button>
       <br>
       <!-- <i class = "down arrow icon large"></i> -->
@@ -120,7 +120,7 @@
   <!-- Creator information Form -->
   <div class="create-event-body ui text container" id="name-email-body" style="display: none">
 
-    <h1>Your Information</h1>
+    <h1 class = "title">Your Information</h1>
     <form method="POST" action="/">
       <h2>Enter your name</h2>
       <div class="ui input"> <input id="name-field" type="text" placeholder="Name..."> </div>
@@ -152,6 +152,10 @@
   <!-- Event Availability Creation Form -->
   <div class="create-event-body ui text container" id="proposal-times-body" style="display: none">
     <h1>Possible Event Times</h1>
+    <p>Please enter in possible event start dates and times below.</p>
+    <p>Hit "Add Availability" to add in a possible event start time to your event.</p>
+    <p>Add as many availabilities as you like! </p>
+    <p>Hit the "Save" Button to continue!</p>
     <form method="POST" action="/">
 
       <div class="ui calendar" id="standard_calendar">
