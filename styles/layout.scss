@@ -20,6 +20,8 @@ body{
 div#main-header {
   padding: 1rem;
   background: #29586C;
+  // background-image: url('../Pictures/table-wine.jpg');
+  z-index: 200;
 }
 
 
@@ -60,7 +62,7 @@ h2#slogan{
     display: flex;
     flex-direction: row;
     background:#133F53;
-    align-items: baseline;
+    align-items: center;
   }
 
   #main-header{
@@ -72,6 +74,7 @@ h2#slogan{
   }
 
   h1#logo{
+    margin-left: 0.25rem;
     font-size: 2rem;
   }
   h1#logo2{
@@ -88,8 +91,9 @@ h2#slogan{
     }
 
   #create-event-start {
-    padding: 1rem;
-    font-size: 1rem;
+    margin-right: 0.75rem;
+    padding:0.5rem;
+    font-size: 1.5rem;
   }
 
 }
