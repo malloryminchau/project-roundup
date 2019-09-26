@@ -7,6 +7,7 @@ const renderPageInfo = require("./lib/renderPageInfo.js");
 const renderAvailability = require("./lib/renderAvailability.js");
 const rsvpNameInfo = require("./lib/rsvpNameInfo.js");
 const voteInsert = require("./lib/voteInsert.js");
+const editVotePage = require("./lib/editVotePage.js")
 
 //Twilio API
 const sgMail = require("@sendgrid/mail");
@@ -193,8 +194,11 @@ app.get("/api/editvoteinput", (req, res) => {
 })
 
 app.post("/api/editvote", (req, res) => {
-
   editVotePage.editVotePage(db, req.body.proposalData[0], req.body.proposalData[1], req.body.proposalData[2], req.body.proposalData[3])
+  .then(response => {
+    console.log("THE DATABASE HAS PROBABLY BEEN EDITED NOW OKAY PLEASE")
+    res.send(response.rows)
+  })
 })
 
 
