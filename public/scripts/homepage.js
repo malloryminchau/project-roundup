@@ -10,14 +10,16 @@
 // CREATE NEW BUTTON CLICKED everything else is toggled away (if help is toggled move it up) name field toggled
     $('#create-event-start').on('click', (event) => { //new-event-button is a stand in for now before route id is selected
       event.preventDefault();
-      console.log("Hello I am working!")
+      $('#create-event-start').toggle('')
+      $('#create-event-start2').toggle('')
       // $('#help-desc-body').toggleUp(); //change command to make sure this is toggled UP when this is clicked (default on all stages)
       $('#name-email-body').slideDown(); //name fill in form slides down
     })
 
     $('#create-event-start2').on('click', (event) => { //new-event-button is a stand in for now before route id is selected
       event.preventDefault();
-      console.log("Hello I am working!")
+      $('#create-event-start').toggle('')
+      $('#create-event-start2').toggle('')
       // $('#help-desc-body').toggleUp(); //change command to make sure this is toggled UP when this is clicked (default on all stages)
       $('#name-email-body').slideDown(); //name fill in form slides down
     })
@@ -36,6 +38,7 @@
           window.localStorage.setItem('email', response)
           $('#name-email-body').slideUp();
           $('#event-description-body').slideDown();
+
         }
       })
 
