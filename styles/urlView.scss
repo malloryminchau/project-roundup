@@ -4,6 +4,9 @@ $secondaryButtonColor: #C63500;
 $textBackgroundColor: #f9f9f9;
 $fieldButtonColor: #29586C;
 
+// #edit-rsvp-authentication
+
+// BUTTONS
 #rsvp {
   background-color: $primaryButtonColor;
 }
@@ -12,8 +15,34 @@ $fieldButtonColor: #29586C;
   background-color: $primaryButtonColor;
 }
 
+#confirm-user {
+  background-color: $primaryButtonColor;
+}
+
+#edit-confirm{
+  background-color: $primaryButtonColor;
+}
+
 #confirm-rsvp {
   background-color: $primaryButtonColor;
+}
+
+// TOGGLE TEXT AREAS AND BORDERS
+
+#edit-rsvp-authentication {
+  padding: 1rem;
+  text-align: center;
+  border-style: solid;
+  border-width: 2px;
+}
+
+div#user-authentication {
+  // display:flex;
+  // flex-direction: column;
+  padding: 1rem;
+  text-align: center;
+  border-style: solid;
+  border-width: 2px;
 }
 
 a#toggle {
@@ -32,11 +61,7 @@ div#rsvp {
   text-align: center;
 }
 
-div#user-authentication {
-  display:flex;
-  flex-direction: column;
-  text-align: center;
-}
+
 
 h1#logo {
   align-items: center;

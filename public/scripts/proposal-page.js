@@ -84,7 +84,9 @@ $(document).ready(() => {
   // toggles down the editor container
   $('#edit-rsvp').on('click', (event) => {
     event.preventDefault()
-    console.log(url)
+    $('#edit-rsvp-authentication').toggle('')
+
+    // console.log(url)
     //toggle stuff
   })
 
