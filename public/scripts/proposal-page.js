@@ -14,20 +14,78 @@ $(document).ready(() => {
     data: {url: url},
     success: function(response) {
       let allTimes = []
+      let allNames = []
       let uniqueTimes = []
+      let uniqueNames = []
+
+      console.log("THIS IS THE RESPONSE: ", response)
+
+
       response.forEach(function(element) {
         allTimes.push(element.time);
       })
-      //console.log(allTimes)
-      //uniqueTimes = [... new Set(allTimes)];
+
+      response.forEach(function(element) {
+        allNames.push(element.name);
+      })
+
+      uniqueNames = [... new Set(allNames)];
+      console.log("UNIQUE NAMESSSS: " + uniqueNames)
+
+      uniqueTimes = [... new Set(allTimes)];
       console.log("UNIQUE TIMES: " + uniqueTimes)
-      allTimes.forEach(function(time) {
+
+
+
+      uniqueTimes.forEach(function(time) {
         $('#table-times').append(`
-        <th>${time}</th>
+        <th rowspan = "1" class="center aligned">${time}</th>
         `)
       })
 
-    }
+      uniqueNames.forEach(function(name){
+        let tempArray = []
+
+      uniqueTimes.forEach(function(time){
+        response.forEach(function(element) {
+          if (element.name === name && element.time === time){
+            console.log("Match Found", name, time, element.availability)
+            tempArray.push(element.availability);
+          }
+        })
+      })
+
+
+      console.log("TEMPARRAY", tempArray)
+
+        let new_row = $('#rows').append(`<tr>`);
+
+        new_row.append(`<td>${name}</td>`)
+
+        tempArray.forEach(function(aTime){
+          new_row.append(`<td class="center aligned">${aTime}</td>`)
+
+
+        //   $('#rows').append(`
+        //   <td class="center aligned">${aTime}</td>
+        // `)
+      })
+
+      //   $('#rows').append(`</tr>`);
+
+
+    })
+
+
+
+
+
+
+
+
+
+
+    }//end of success
   })
 
 
