@@ -1,5 +1,5 @@
 let hrefVal = $(location).attr("href");
-// let url = hrefVal.slice(31);
+let url = hrefVal.slice(31);
 
 //localhost
 // let url = hrefVal.slice(28);
