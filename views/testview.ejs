@@ -68,9 +68,9 @@
 
     <!-- Title, description and location information-->
     <div class = "ui container" id = "proposal-header">
-        <h1> <%=title%> </h1>
-        <i class="map marker alternate icon" style = "display: inline-block; color:orangered"></i><h3 style = "display: inline-block"><a href="abc" target="_blank"><%=location%></a></h3>
-        <h2><%=description%></h2>
+        <h1 id ="title"> <%=title%> </h1>
+        <i class="big map marker alternate icon" style = "display: inline; color:orangered; vertical-align: top;" style="margin-bottom: 10px"></i><h3 id ="location" data-position="right center"><a href="abc" target="_blank"><%=location%></a></h3>
+        <h2 id = "description"><%=description%></h2>
         <button class ="ui primary button" id="rsvp">RSVP</button>
         <button class ="ui primary button" id="edit-rsvp">Edit RSVP</button>
     </div>
@@ -120,14 +120,23 @@
           <button class ="ui primary button" type = "submit" id ="edit-confirm">Confirm Here</button>
         </div>
 
-      <div class = "ui container">
+
+
+        <!-- small table-->
+      <div class = "ui text container" id = "smalltable">
+        <h1>Potential Event Start Times</h1>
+        <div id = "smalltime"></div>
+
+
+      </div>
+
+
+      <!-- DISPLAY BIG TABLE-->
+      <div class = "ui container" id = "bigtable">
       <table class="ui celled structured table">
         <thead>
           <tr id="table-times">
             <th rowspan="2">Name</th>
-            <!-- <th rowspan="2">Type</th>
-              <th rowspan="2">Files</th> -->
-              <!-- <th colspan="3">Possible Event Times</th> -->
             </tr>
             <tr>
           </tr>
@@ -135,29 +144,18 @@
         <tbody id ="rows">
           <!-- insert User and availabilities here -->
 
-          <!-- <tr>
-            <td>Eddie</td>
-            <td class="center aligned">
-              <i class="large green checkmark icon"></i>
-            </td>
-            <td class="center aligned">
-                <i class="large green checkmark icon"></i>
-              </td>
-          </tr> -->
-          <!-- <tr></tr> -->
-              <!-- <td>Andrew</td>
-              <td class="center aligned">
-                <i class="large green checkmark icon"></i>
-              </td>
-              <td class="center aligned">
-                  <i class="large green checkmark icon"></i>
-                </td> -->
-                </tbody>
-          </div>
+          </tbody>
+        </div>
+
+
+      <!-- DISPLAY SMALL INFO DISPLAY-->
 
 
 
     </div>
+
+
+
   </body>
 
   <script>

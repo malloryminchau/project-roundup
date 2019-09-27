@@ -6,6 +6,14 @@ $fieldButtonColor: #29586C;
 
 // #edit-rsvp-authentication
 
+#smalltable {
+  display:none;
+}
+
+#bigtable {
+  display:flex;
+}
+
 // BUTTONS
 #rsvp {
   background-color: $primaryButtonColor;
@@ -107,10 +115,50 @@ div#options {
 
 }
 
+#title {
+  font-size: 3rem;
+}
+
+#location {
+  font-size: 2rem;
+  display: inline;
+}
+
+#description {
+  margin-top:2rem;
+}
+
 @media (max-width: 600px) {
+
+  #smalltable {
+    display: block;
+    padding: 1rem;
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    text-align: center;
+  }
+
+  #bigtable {
+    display: none;
+  }
+
+  #title {
+    font-size: 2rem;
+  }
+
+  #location {
+    font-size: 1.5rem;
+  }
+
+  #description {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+  }
 
 
   //LOGO RESIZE
+
   h1#logo {
     display: flex;
     float: center;
@@ -127,20 +175,15 @@ div#options {
     font-size: 2rem;
   }
 
-  div#proposal-header h1 {
-    margin: 0.25em;
-    font-size: 2rem
-  }
+  // div#proposal-header h1 {
+  //   margin: 0.25em;
+  //   font-size: 2rem
+  // }
 
-  div#proposal-header h2 {
-    margin: 0.25rem;
-    font-size: 0.75rem
-  }
-
-  div#proposal-header h3 {
-    margin: 0.25rem;
-    font-size: 1rem
-  }
+  // div#proposal-header h3 {
+  //   margin: 0.25rem;
+  //   font-size: 1rem
+  // }
 
   div.ui.input {
     padding: 0em;

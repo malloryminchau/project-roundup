@@ -41,6 +41,10 @@ $(document).ready(() => {
         $('#table-times').append(`
         <th rowspan = "1" class="center aligned">${time}</th>
         `)
+
+        $('#smalltime').append(`
+        <h3>${time}</h3>
+        `)
       })
 
       uniqueNames.forEach(function(name){
@@ -60,7 +64,7 @@ $(document).ready(() => {
 
         let new_row = $('#rows').append(`<tr>`);
 
-        new_row.append(`<td>${name}</td>`)
+        new_row.append(`<td class="center aligned">${name}</td>`)
 
         tempArray.forEach(function(aTime){
           new_row.append(`<td class="center aligned">${aTime}</td>`)
@@ -71,7 +75,6 @@ $(document).ready(() => {
         // `)
       })
 
-      //   $('#rows').append(`</tr>`);
 
 
     })
@@ -215,9 +218,11 @@ $(document).ready(() => {
     }
   })
 
-
-
-
+  $('#description')
+  .popup({
+    content : 'Click me to open Google Maps!'
+  })
+;
 
 
   $('#home-redirect').on('click', (event) => {
