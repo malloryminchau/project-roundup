@@ -78,6 +78,7 @@ div#rsvp {
 
 
 h1#logo {
+  display: inline-block;
   align-items: center;
   // margin-left: auto;
   // margin-right: 0px;
@@ -86,7 +87,8 @@ h1#logo {
   text-align: center;
 }
 
-h2#logo {
+h1#logo2 {
+  display: inline-block;
   align-items: center;
   // margin-left: 0px;
   // margin-right: auto;
@@ -107,7 +109,17 @@ div#options {
 
 @media (max-width: 600px) {
 
+
+  //LOGO RESIZE
   h1#logo {
+    display: flex;
+    float: center;
+    color: white;
+    // margin-left: 1rem;
+    font-size: 2rem;
+  }
+
+  h1#logo2 {
     display: flex;
     float: center;
     color: white;
@@ -153,49 +165,50 @@ div#options {
     flex-direction: column;
     text-align: center;
   }
-
-  @media only screen and (max-width: 320px) {
-
-    /* Small screen, non-retina */
-    body#body {
-      background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
-    }
-  }
-
-  @media only screen and (min-resolution: 2dppx) and (max-width: 320px) {
-
-    /* Small screen, retina */
-    body#body {
-      background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
-    }
-  }
-
-  @media only screen and (min-width: 321px) and (max-width: 538px) {
-
-    /* Medium screen, non-retina */
-    body#body {
-      background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
-    }
-  }
-
-  @media only screen and (min-resolution: 2dppx) and (min-width: 321px) and (max-width: 538px) {
-
-    /* Medium screen, retina */
-    body#body {
-      background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
-    }
-  }
-
-  @media only screen and (min-resolution: 2dppx) and (min-width: 539px) {
-
-    /* Large screen, retina */
-    body#body {
-      background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
-    }
-  }
-
-
 }
+
+//   @media only screen and (max-width: 320px) {
+
+//     /* Small screen, non-retina */
+//     body#body {
+//       background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
+//     }
+//   }
+
+//   @media only screen and (min-resolution: 2dppx) and (max-width: 320px) {
+
+//     /* Small screen, retina */
+//     body#body {
+//       background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
+//     }
+//   }
+
+//   @media only screen and (min-width: 321px) and (max-width: 538px) {
+
+//     /* Medium screen, non-retina */
+//     body#body {
+//       background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
+//     }
+//   }
+
+//   @media only screen and (min-resolution: 2dppx) and (min-width: 321px) and (max-width: 538px) {
+
+//     /* Medium screen, retina */
+//     body#body {
+//       background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
+//     }
+//   }
+
+//   @media only screen and (min-resolution: 2dppx) and (min-width: 539px) {
+
+//     /* Large screen, retina */
+//     body#body {
+//       background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
+//     }
+//   }
+
+
+// }
 
 // End of media small size
 
