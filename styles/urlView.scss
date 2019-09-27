@@ -7,9 +7,21 @@ $fieldButtonColor: #29586C;
 // #edit-rsvp-authentication
 
 
+#availability-modify {
+  padding: 2rem;
+  // display: flex;
+  text-align: center;
+  // flex-direction: column;
+  border-style: solid;
+  border-width: 2px;
+  margin-bottom: 2rem;
+
+}
+
 div#options {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
 }
 
 #smalltable {
@@ -17,7 +29,10 @@ div#options {
 }
 
 #bigtable {
+  margin-top: 2rem;
   display:flex;
+  border-style: solid;
+  border-width: 2px;
 }
 
 // BUTTONS
@@ -212,10 +227,11 @@ div#options {
     flex-direction: column;
   }
 
-  div#availability-modify {
+  #availability-modify {
     display: flex;
     flex-direction: column;
     text-align: center;
+
   }
 }
 

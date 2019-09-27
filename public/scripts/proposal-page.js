@@ -248,4 +248,13 @@ $(document).ready(() => {
     window.location.replace('/');
   })
 
+  $('.hover').hover(function(){
+    $(this).css("background-color", "#29568C")
+  }, function() {
+    $(this).css("background-color", "")
+  })
+
+  // $('#rsvp').mouseLeave(function(){
+  // })
+
 }) // end of document ready

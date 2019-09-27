@@ -71,8 +71,8 @@
         <h1 id ="title"> <%=title%> </h1>
         <i class="big map marker alternate icon" style = "display: inline; color:orangered; vertical-align: top;" style="margin-bottom: 10px"></i><h3 id ="location" data-position="right center"><a href="abc" target="_blank"><%=location%></a></h3>
         <h2 id = "description"><%=description%></h2>
-        <button class ="ui primary button" id="rsvp">RSVP</button>
-        <button class ="ui primary button" id="edit-rsvp">Edit RSVP</button>
+        <button class ="ui primary button hover" id="rsvp">RSVP</button>
+        <button class ="ui primary button hover" id="edit-rsvp">Edit RSVP</button>
     </div>
 
     <div class="ui hidden divider"></div>
@@ -95,7 +95,7 @@
         <label>RSVP for SEPT 29th</label> -->
 
         <div class="ui hidden divider"></div>
-        <button class ="ui primary button" type = "submit" id ="confirm-user">Save User Info</button>
+        <button class ="ui primary button hover" type = "submit" id ="confirm-user">Save User Info</button>
       </div>
 
       <div class = "ui container" id = "availability-modify" style = "display: none">
@@ -103,7 +103,7 @@
           <div class = "ui text container" id = "options"></div>
 
           <div class="ui hidden divider"></div>
-        <button class ="ui primary button" type = "submit" id ="confirm-rsvp">Confirm Here</button>
+        <button class ="ui primary button hover" type = "submit" id ="confirm-rsvp">Confirm Here</button>
       </div>
 
 
@@ -117,7 +117,7 @@
           <h2>Availability Options</h2>
           <div class = "ui container" id = "edit-options"></div> <!-- THIS IS WHERE TO APPEND THE OPTIONS-->
           <div class="ui hidden divider"></div>
-          <button class ="ui primary button" type = "submit" id ="edit-confirm">Confirm Here</button>
+          <button class ="ui primary button hover" type = "submit" id ="edit-confirm">Confirm Here</button>
         </div>
 
 
@@ -139,7 +139,7 @@
 
       <!-- DISPLAY BIG TABLE-->
       <div class = "ui container" id = "bigtable">
-      <table class="ui celled structured table">
+      <table class="ui celled structured table" style = "padding: 1rem;">
         <thead>
           <tr id="table-times">
             <th class="center aligned" rowspan="2">Name</th>
