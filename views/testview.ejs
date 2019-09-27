@@ -68,13 +68,11 @@
 
     <!-- Title, description and location information-->
     <div class = "ui container" id = "proposal-header">
-        <h1> <%=title%> </h1>
-        <h3><a href="abc" target="_blank">
-          <%=location%>
-        </a></h3>
-        <h2><%=description%></h2>
-        <button class ="ui primary button" id="rsvp">RSVP</button>
-        <button class ="ui primary button" id="edit-rsvp">Edit RSVP</button>
+        <h1 id ="title"> <%=title%> </h1>
+        <i class="big map marker alternate icon" style = "display: inline; color:orangered; vertical-align: top;" style="margin-bottom: 10px"></i><h3 id ="location" data-position="right center"><a href="abc" target="_blank"><%=location%></a></h3>
+        <h2 id = "description"><%=description%></h2>
+        <button class ="ui primary button hover" id="rsvp">RSVP</button>
+        <button class ="ui primary button hover" id="edit-rsvp">Edit RSVP</button>
     </div>
 
     <div class="ui hidden divider"></div>
@@ -97,15 +95,15 @@
         <label>RSVP for SEPT 29th</label> -->
 
         <div class="ui hidden divider"></div>
-        <button class ="ui primary button" type = "submit" id ="confirm-user">Save User Info</button>
+        <button class ="ui primary button hover" type = "submit" id ="confirm-user">Save User Info</button>
       </div>
 
-      <div class = "ui text container" id = "availability-modify" style = "display: none">
+      <div class = "ui container" id = "availability-modify" style = "display: none">
           <h1>Confirm Availability</h1>
-          <div class = "ui container" id = "options"></div>
+          <div class = "ui text container" id = "options"></div>
 
           <div class="ui hidden divider"></div>
-        <button class ="ui primary button" type = "submit" id ="confirm-rsvp">Confirm Here</button>
+        <button class ="ui primary button hover" type = "submit" id ="confirm-rsvp">Confirm Here</button>
       </div>
 
 
@@ -116,20 +114,35 @@
           <div class="ui input">
             <input type="text" placeholder="Email..." id="edit-email">
           </div>
-          <h2>Availability Options:</h2>
+          <h2>Availability Options</h2>
           <div class = "ui container" id = "edit-options"></div> <!-- THIS IS WHERE TO APPEND THE OPTIONS-->
           <div class="ui hidden divider"></div>
-          <button class ="ui primary button" type = "submit" id ="edit-confirm">Confirm Here</button>
+          <button class ="ui primary button hover" type = "submit" id ="edit-confirm">Confirm Here</button>
         </div>
 
-      <div class = "ui container">
-      <table class="ui celled structured table">
+
+
+        <!-- small table-->
+      <div class = "ui text container" id = "smalltable">
+        <h1 style="display: inline">Potential Event Start Times </h1><i class="large calendar alternate outline icon" style="display: inline; vertical-align: baseline;" id = "calendar-icon"></i>
+        <div class="ui hidden divider"></div>
+        <div id = "smalltime"></div>
+        <div class="ui hidden divider"></div>
+
+        <h1 style="display: inline;">People Responded </h1><i class="large users icon" style="display: inline; vertical-align: baseline;" id = "calendar-icon"></i>
+        <div class="ui hidden divider"></div>
+        <div id = "smallname"></div>
+
+
+      </div>
+
+
+      <!-- DISPLAY BIG TABLE-->
+      <div class = "ui container" id = "bigtable">
+      <table class="ui celled structured table" style = "padding: 1rem;">
         <thead>
           <tr id="table-times">
-            <th rowspan="2">Name</th>
-            <!-- <th rowspan="2">Type</th>
-              <th rowspan="2">Files</th> -->
-              <!-- <th colspan="3">Possible Event Times</th> -->
+            <th class="center aligned" rowspan="2">Name</th>
             </tr>
             <tr>
           </tr>
@@ -137,29 +150,18 @@
         <tbody id ="rows">
           <!-- insert User and availabilities here -->
 
-          <!-- <tr>
-            <td>Eddie</td>
-            <td class="center aligned">
-              <i class="large green checkmark icon"></i>
-            </td>
-            <td class="center aligned">
-                <i class="large green checkmark icon"></i>
-              </td>
-          </tr> -->
-          <!-- <tr></tr> -->
-              <!-- <td>Andrew</td>
-              <td class="center aligned">
-                <i class="large green checkmark icon"></i>
-              </td>
-              <td class="center aligned">
-                  <i class="large green checkmark icon"></i>
-                </td> -->
-                </tbody>
-          </div>
+          </tbody>
+        </div>
+
+
+      <!-- DISPLAY SMALL INFO DISPLAY-->
 
 
 
     </div>
+
+
+
   </body>
 
   <script>

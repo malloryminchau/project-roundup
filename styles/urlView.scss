@@ -6,6 +6,47 @@ $fieldButtonColor: #29586C;
 
 // #edit-rsvp-authentication
 
+thead {
+  padding: 1rem;
+}
+
+th {
+  padding: 2rem;
+}
+
+td {
+  padding: 2rem;
+}
+
+
+#availability-modify {
+  padding: 2rem;
+  // display: flex;
+  text-align: center;
+  // flex-direction: column;
+  border-style: solid;
+  border-width: 2px;
+  margin-bottom: 2rem;
+
+}
+
+div#options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#smalltable {
+  display:none;
+}
+
+#bigtable {
+  margin-top: 2rem;
+  display:flex;
+  border-style: solid;
+  border-width: 2px;
+}
+
 // BUTTONS
 #rsvp {
   background-color: $primaryButtonColor;
@@ -53,10 +94,13 @@ body#body {
 div#user-authentication {
   // display:flex;
   // flex-direction: column;
-  padding: 1rem;
+  padding: 3rem;
   text-align: center;
   border-style: solid;
   border-width: 2px;
+  display:flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
 }
 
 a#toggle {
@@ -78,6 +122,7 @@ div#rsvp {
 
 
 h1#logo {
+  display: inline-block;
   align-items: center;
   // margin-left: auto;
   // margin-right: 0px;
@@ -86,7 +131,8 @@ h1#logo {
   text-align: center;
 }
 
-h2#logo {
+h1#logo2 {
+  display: inline-block;
   align-items: center;
   // margin-left: 0px;
   // margin-right: auto;
@@ -105,7 +151,49 @@ div#options {
 
 }
 
+#title {
+  font-size: 3rem;
+}
+
+#location {
+  font-size: 2rem;
+  display: inline;
+}
+
+#description {
+  margin-top:1rem;
+}
+
 @media (max-width: 600px) {
+
+  #smalltable {
+    display: block;
+    padding: 1rem;
+    // text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    // text-align: center;
+  }
+
+  #bigtable {
+    display: none;
+  }
+
+  #title {
+    font-size: 2rem;
+  }
+
+  #location {
+    font-size: 1.5rem;
+  }
+
+  #description {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+  }
+
+
+  //LOGO RESIZE
 
   h1#logo {
     display: flex;
@@ -115,20 +203,23 @@ div#options {
     font-size: 2rem;
   }
 
-  div#proposal-header h1 {
-    margin: 0.25em;
-    font-size: 2rem
+  h1#logo2 {
+    display: flex;
+    float: center;
+    color: white;
+    // margin-left: 1rem;
+    font-size: 2rem;
   }
 
-  div#proposal-header h2 {
-    margin: 0.25rem;
-    font-size: 0.75rem
-  }
+  // div#proposal-header h1 {
+  //   margin: 0.25em;
+  //   font-size: 2rem
+  // }
 
-  div#proposal-header h3 {
-    margin: 0.25rem;
-    font-size: 1rem
-  }
+  // div#proposal-header h3 {
+  //   margin: 0.25rem;
+  //   font-size: 1rem
+  // }
 
   div.ui.input {
     padding: 0em;
@@ -148,54 +239,56 @@ div#options {
     flex-direction: column;
   }
 
-  div#availability-modify {
+  #availability-modify {
     display: flex;
     flex-direction: column;
     text-align: center;
+
   }
-
-  @media only screen and (max-width: 320px) {
-
-    /* Small screen, non-retina */
-    body#body {
-      background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
-    }
-  }
-
-  @media only screen and (min-resolution: 2dppx) and (max-width: 320px) {
-
-    /* Small screen, retina */
-    body#body {
-      background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
-    }
-  }
-
-  @media only screen and (min-width: 321px) and (max-width: 538px) {
-
-    /* Medium screen, non-retina */
-    body#body {
-      background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
-    }
-  }
-
-  @media only screen and (min-resolution: 2dppx) and (min-width: 321px) and (max-width: 538px) {
-
-    /* Medium screen, retina */
-    body#body {
-      background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
-    }
-  }
-
-  @media only screen and (min-resolution: 2dppx) and (min-width: 539px) {
-
-    /* Large screen, retina */
-    body#body {
-      background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
-    }
-  }
-
-
 }
+
+//   @media only screen and (max-width: 320px) {
+
+//     /* Small screen, non-retina */
+//     body#body {
+//       background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
+//     }
+//   }
+
+//   @media only screen and (min-resolution: 2dppx) and (max-width: 320px) {
+
+//     /* Small screen, retina */
+//     body#body {
+//       background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
+//     }
+//   }
+
+//   @media only screen and (min-width: 321px) and (max-width: 538px) {
+
+//     /* Medium screen, non-retina */
+//     body#body {
+//       background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
+//     }
+//   }
+
+//   @media only screen and (min-resolution: 2dppx) and (min-width: 321px) and (max-width: 538px) {
+
+//     /* Medium screen, retina */
+//     body#body {
+//       background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
+//     }
+//   }
+
+//   @media only screen and (min-resolution: 2dppx) and (min-width: 539px) {
+
+//     /* Large screen, retina */
+//     body#body {
+//       background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
+//     }
+//   }
+
+
+// }
 
 // End of media small size
 

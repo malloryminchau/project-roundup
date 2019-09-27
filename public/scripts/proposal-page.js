@@ -41,6 +41,15 @@ $(document).ready(() => {
         $('#table-times').append(`
         <th rowspan = "1" class="center aligned">${time}</th>
         `)
+
+        $('#smalltime').append(`
+        <h3>${time}</h3>
+        `)
+      })
+
+      uniqueNames.forEach(function(name){
+        $('#smallname').append(`
+        <h3>${name}</h3>`)
       })
 
       uniqueNames.forEach(function(name){
@@ -60,18 +69,20 @@ $(document).ready(() => {
 
         let new_row = $('#rows').append(`<tr>`);
 
-        new_row.append(`<td>${name}</td>`)
+        new_row.append(`<td class="center aligned">${name}</td>`)
 
         tempArray.forEach(function(aTime){
-          new_row.append(`<td class="center aligned">${aTime}</td>`)
+          if (aTime === true) {
+            new_row.append(`<td class="center aligned"><i class="large green checkmark icon"></i></td>`)
+          } else {
+            new_row.append(`<td class="center aligned"><i class="large red ban icon"></i></td>`)
+          }
 
 
-        //   $('#rows').append(`
-        //   <td class="center aligned">${aTime}</td>
-        // `)
+          // new_row.append(`<td class="center aligned">${aTime}</td>`)
+
       })
 
-      //   $('#rows').append(`</tr>`);
 
 
     })
@@ -153,6 +164,16 @@ $(document).ready(() => {
         data: {proposalData: proposalData},
         success: function(response) {
           console.log("data has been sent successfully")
+          window.location.reload();
+
+          // let new_row = $('#rows').append(`<tr>`);
+
+          // new_row.append(`<td class="center aligned">${name}</td>`)
+
+          // tempArray.forEach(function(aTime){
+          //   new_row.append(`<td class="center aligned">${aTime}</td>`)
+          // })
+
         }
       })
     }
@@ -210,18 +231,30 @@ $(document).ready(() => {
         data: {proposalData: proposalData},
         success: function(response) {
           console.log("data has been sent successfully")
+          window.location.reload();
         }
       })
     }
   })
 
-
-
-
+  $('#location')
+  .popup({
+    content : 'Click me to open Google Maps!'
+  })
+;
 
 
   $('#home-redirect').on('click', (event) => {
     window.location.replace('/');
   })
+
+  $('.hover').hover(function(){
+    $(this).css("background-color", "#29568C")
+  }, function() {
+    $(this).css("background-color", "")
+  })
+
+  // $('#rsvp').mouseLeave(function(){
+  // })
 
 }) // end of document ready
