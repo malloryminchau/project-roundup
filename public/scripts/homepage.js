@@ -20,7 +20,6 @@ $(document).ready(() => {
   $("#how-it-works").on("click", event => {
     //new-event-button is a stand in for now before route id is selected
     event.preventDefault();
-
     // $('#help-desc-body').toggleUp(); //change command to make sure this is toggled UP when this is clicked (default on all stages)
     $("#how-it-works-start").toggle(""); //name fill in form slides down
   });
