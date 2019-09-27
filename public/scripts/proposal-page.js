@@ -237,7 +237,7 @@ $(document).ready(() => {
     }
   })
 
-  $('#description')
+  $('#location')
   .popup({
     content : 'Click me to open Google Maps!'
   })
