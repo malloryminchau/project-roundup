@@ -48,6 +48,11 @@ $(document).ready(() => {
       })
 
       uniqueNames.forEach(function(name){
+        $('#smallname').append(`
+        <h3>${name}</h3>`)
+      })
+
+      uniqueNames.forEach(function(name){
         let tempArray = []
 
       uniqueTimes.forEach(function(time){
@@ -69,10 +74,6 @@ $(document).ready(() => {
         tempArray.forEach(function(aTime){
           new_row.append(`<td class="center aligned">${aTime}</td>`)
 
-
-        //   $('#rows').append(`
-        //   <td class="center aligned">${aTime}</td>
-        // `)
       })
 
 
@@ -156,6 +157,16 @@ $(document).ready(() => {
         data: {proposalData: proposalData},
         success: function(response) {
           console.log("data has been sent successfully")
+          window.location.reload();
+
+          // let new_row = $('#rows').append(`<tr>`);
+
+          // new_row.append(`<td class="center aligned">${name}</td>`)
+
+          // tempArray.forEach(function(aTime){
+          //   new_row.append(`<td class="center aligned">${aTime}</td>`)
+          // })
+
         }
       })
     }
@@ -213,6 +224,7 @@ $(document).ready(() => {
         data: {proposalData: proposalData},
         success: function(response) {
           console.log("data has been sent successfully")
+          window.location.reload();
         }
       })
     }
