@@ -160,7 +160,7 @@
 
     <!-- Event information Form -->
     <div class="create-event-body ui text container" id="event-description-body" style="display: none">
-      <h1>Event Details</h1>
+      <h1 id="font-color-black">Event Details</h1>
       <form method="POST" action="/">
         <h2>Enter a Name for Your Event</h2>
         <div class="ui input"> <input id="event-name" type="text" placeholder="Event Name..."> </div>
@@ -203,17 +203,17 @@
         .calendar();
 
     </script>
-    <!-- <script>
-    function activatePlacesSearch() {
-      var input = document.getElementById('event-location');
-      var autocomplete = new google.maps.places.Autocomplete(input);
-    };
+    <script>
+      function activatePlacesSearch() {
+        var input = document.getElementById('event-location');
+        var autocomplete = new google.maps.places.Autocomplete(input);
+      };
 
-  </script>
-  <!-- Add feature when presenting -->
-    <!-- <script type="text/javascript"
-    src="https://maps.googleapis.com/maps/api/js?key=YOURAPIKEY&libraries=places&callback=activatePlacesSearch">
-  </script> -->
+    </script>
+    <!-- Add feature when presenting -->
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=YOURAPIKEY&libraries=places&callback=activatePlacesSearch">
+    </script>
   </div>
 </body>
 

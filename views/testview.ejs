@@ -1,84 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Round Up!</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- JQuery -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/urlView.css" type="text/css" />
-    <script type="text/javascript" src="/scripts/app.js"></script>
-    <script type="text/javascript" src="/scripts/proposal-page.js"></script>
+<head>
+  <title>Round Up!</title>
 
-    <!-- Old CSS params, do not use -->
-    <!-- <link rel="stylesheet" href="/styles/responsiveStyle.scss" type="text/css" /> -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" /> -->
-    <!-- <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- JQuery -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+  <link rel="stylesheet" href="/styles/urlView.css" type="text/css" />
+  <script type="text/javascript" src="/scripts/app.js"></script>
+  <script type="text/javascript" src="/scripts/proposal-page.js"></script>
+
+  <!-- Old CSS params, do not use -->
+  <!-- <link rel="stylesheet" href="/styles/responsiveStyle.scss" type="text/css" /> -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" /> -->
+  <!-- <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script> -->
 
 
-    <!-- FOMANTIC UI-->
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.7.8/dist/semantic.min.css">
-    <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.7.8/dist/semantic.min.js"></script>
+  <!-- FOMANTIC UI-->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/fomantic-ui@2.7.8/dist/semantic.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/fomantic-ui@2.7.8/dist/semantic.min.js"></script>
 
-    <!-- Semantic UI Calendar Module-->
-    <link rel="stylesheet" href="/vendor/calendar.css" type="text/css" />
-    <script type="text/javascript" src="/vendor/calendar.js"></script>
+  <!-- Semantic UI Calendar Module-->
+  <link rel="stylesheet" href="/vendor/calendar.css" type="text/css" />
+  <script type="text/javascript" src="/vendor/calendar.js"></script>
 
-    <!-- <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI-Calendar/76959c6f7d33a527b49be76789e984a0a407350b/dist/calendar.min.js"></script> -->
+  <!-- <script src="https://cdn.rawgit.com/mdehoog/Semantic-UI-Calendar/76959c6f7d33a527b49be76789e984a0a407350b/dist/calendar.min.js"></script> -->
 
-  </head>
+</head>
 
-  <body>
-    <!-- Side Bar Menu-->
-    <div class="ui left demo vertical inverted sidebar labeled icon menu" id = "sidebar">
-      <a class="item" id ="home-redirect">
-        <i class="home icon"></i>
-        Home
-      </a>
-      <a class="item">
-        <i class="block layout icon"></i>
-        How to use
-      </a>
-      <a class="item">
-        <i class="smile icon"></i>
-        Create Event
-      </a>
-    </div>
+<body>
+  <!-- Side Bar Menu-->
+  <div class="ui left demo vertical inverted sidebar labeled icon menu" id="sidebar">
+    <a class="item" id="home-redirect">
+      <i class="home icon"></i>
+      Home
+    </a>
+    <a class="item">
+      <i class="block layout icon"></i>
+      How to use
+    </a>
+    <a class="item">
+      <i class="smile icon"></i>
+      Create Event
+    </a>
+  </div>
 
-    <div class = "pusher"> <!-- This is required syntax for the side bar menu-->
+  <div class="pusher">
+    <!-- This is required syntax for the side bar menu-->
 
 
     <!-- Nav bar-->
-    <div class = "ui basic icon top inverted menu" style= "margin-bottom: 1em" id = "navbar">
+    <div class="ui basic icon top inverted menu" style="margin-bottom: 1em" id="navbar">
 
-      <a id = "toggle" class = "item">
-        <i class = "sidebar icon"></i>
+      <a id="toggle" class="item">
+        <i class="sidebar icon"></i>
       </a>
-      <h1 id = "logo">ROUND</h1><h1 id="logo2" style = "color: orangered">UP</h1>
+      <h1 id="logo">ROUND</h1>
+      <h1 id="logo2" style="color: orangered">UP</h1>
 
       <!-- script to trigger the side bar menu-->
       <script>
-      $('#toggle').click(function(){
-        $('.ui.sidebar').sidebar('toggle');
-      });
+        $('#toggle').click(function () {
+          $('.ui.sidebar').sidebar('toggle');
+        });
+
       </script>
     </div>
 
     <!-- Title, description and location information-->
-    <div class = "ui container" id = "proposal-header">
-        <h1 id ="title"> <%=title%> </h1>
-        <i class="big map marker alternate icon" style = "display: inline; color:orangered; vertical-align: top;" style="margin-bottom: 10px"></i><h3 id ="location" data-position="right center"><a href="abc" target="_blank"><%=location%></a></h3>
-        <h2 id = "description"><%=description%></h2>
-        <button class ="ui primary button hover" id="rsvp">RSVP</button>
-        <button class ="ui primary button hover" id="edit-rsvp">Edit RSVP</button>
+    <div class="ui container" id="proposal-header">
+      <h1 id="title"> <%=title%> </h1>
+      <i class="big map marker alternate icon" style="display: inline; color:orangered; vertical-align: top;"
+        style="margin-bottom: 10px"></i>
+      <h3 id="location" data-position="right center"><a href="abc" target="_blank"><%=location%></a></h3>
+      <h2 id="description"><%=description%></h2>
+      <button class="ui primary button hover" id="rsvp">RSVP</button>
+      <button class="ui primary button hover" id="edit-rsvp">Edit RSVP</button>
     </div>
 
     <div class="ui hidden divider"></div>
 
     <!-- Input fields to be toggled when button is hit-->
-    <div class = "ui text container" id = "user-authentication" style = "display: none">
+    <div class="ui text container" id="user-authentication" style="display: none">
       <h2>Name</h2>
       <div class="ui input">
         <input type="text" placeholder="Name..." id="name-input">
@@ -94,82 +100,85 @@
         <input type="checkbox" tabindex="0" class="hidden">
         <label>RSVP for SEPT 29th</label> -->
 
-        <div class="ui hidden divider"></div>
-        <button class ="ui primary button hover" type = "submit" id ="confirm-user">Save User Info</button>
+      <div class="ui hidden divider"></div>
+      <button class="ui primary button hover" type="submit" id="confirm-user">Save User Info</button>
+    </div>
+
+    <div class="ui container" id="availability-modify" style="display: none">
+      <h1>Confirm Availability</h1>
+      <div class="ui text container" id="options"></div>
+
+      <div class="ui hidden divider"></div>
+      <button class="ui primary button hover" type="submit" id="confirm-rsvp">Confirm Here</button>
+    </div>
+
+
+    <!-- EDIT RSVP OPTIONS -->
+    <div class="ui text container" id="edit-rsvp-authentication" style="display: none">
+      <h1>Edit RSVP</h1>
+      <h2>Confirm Email</h2>
+      <div class="ui input">
+        <input type="text" placeholder="Email..." id="edit-email">
       </div>
-
-      <div class = "ui container" id = "availability-modify" style = "display: none">
-          <h1>Confirm Availability</h1>
-          <div class = "ui text container" id = "options"></div>
-
-          <div class="ui hidden divider"></div>
-        <button class ="ui primary button hover" type = "submit" id ="confirm-rsvp">Confirm Here</button>
-      </div>
-
-
-      <!-- EDIT RSVP OPTIONS -->
-      <div class = "ui text container" id = "edit-rsvp-authentication" style = "display: none">
-        <h1>Edit RSVP</h1>
-          <h2>Confirm Email</h2>
-          <div class="ui input">
-            <input type="text" placeholder="Email..." id="edit-email">
-          </div>
-          <h2>Availability Options</h2>
-          <div class = "ui container" id = "edit-options"></div> <!-- THIS IS WHERE TO APPEND THE OPTIONS-->
-          <div class="ui hidden divider"></div>
-          <button class ="ui primary button hover" type = "submit" id ="edit-confirm">Confirm Here</button>
-        </div>
+      <h2>Availability Options</h2>
+      <div class="ui container" id="edit-options"></div> <!-- THIS IS WHERE TO APPEND THE OPTIONS-->
+      <div class="ui hidden divider"></div>
+      <button class="ui primary button hover" type="submit" id="edit-confirm">Confirm Here</button>
+    </div>
 
 
 
-        <!-- small table-->
-      <div class = "ui text container" id = "smalltable">
-        <h1 style="display: inline">Potential Event Start Times </h1><i class="large calendar alternate outline icon" style="display: inline; vertical-align: baseline;" id = "calendar-icon"></i>
-        <div class="ui hidden divider"></div>
-        <div id = "smalltime"></div>
-        <div class="ui hidden divider"></div>
+    <!-- small table-->
+    <div class="ui text container" id="smalltable">
+      <h1 style="display: inline">Potential Event Start Times </h1><i class="large calendar alternate outline icon"
+        style="display: inline; vertical-align: baseline;" id="calendar-icon"></i>
+      <div class="ui hidden divider"></div>
+      <div id="smalltime"></div>
+      <div class="ui hidden divider"></div>
 
-        <h1 style="display: inline;">People Responded </h1><i class="large users icon" style="display: inline; vertical-align: baseline;" id = "calendar-icon"></i>
-        <div class="ui hidden divider"></div>
-        <div id = "smallname"></div>
-
-
-      </div>
-
-
-      <!-- DISPLAY BIG TABLE-->
-      <div class = "ui container" id = "bigtable">
-      <table class="ui celled structured table" style = "padding: 1rem;">
-        <thead>
-          <tr id="table-times">
-            <th class="center aligned" rowspan="2">Name</th>
-            </tr>
-            <tr>
-          </tr>
-        </thead>
-        <tbody id ="rows">
-          <!-- insert User and availabilities here -->
-
-          </tbody>
-        </div>
-
-
-      <!-- DISPLAY SMALL INFO DISPLAY-->
-
+      <h1 style="display: inline;">People Responded </h1><i class="large users icon"
+        style="display: inline; vertical-align: baseline;" id="calendar-icon"></i>
+      <div class="ui hidden divider"></div>
+      <div id="smallname"></div>
 
 
     </div>
 
 
+    <!-- DISPLAY BIG TABLE-->
+    <div class="ui container" id="bigtable">
+      <table class="ui celled structured table" style="padding: 1rem;">
+        <thead>
+          <tr id="table-times">
+            <th class="center aligned" rowspan="2">Name</th>
+          </tr>
+          <tr>
+          </tr>
+        </thead>
+        <tbody id="rows">
+          <!-- insert User and availabilities here -->
 
-  </body>
+        </tbody>
+    </div>
 
-  <script>
-    $('a[href^="abc"]').each(function () {
-      let newUrl =
-        "http://maps.google.com/maps?q=" + encodeURIComponent($(this).text());
-      $(this).attr("href", newUrl);
-    });
 
-  </script>
+    <!-- DISPLAY SMALL INFO DISPLAY-->
+
+
+
+  </div>
+
+
+
+</body>
+
+<script>
+  $('a[href^="abc"]').each(function () {
+    let newUrl =
+      "http://maps.google.com/maps?q=" + encodeURIComponent($(this).text());
+    $(this).attr("href", newUrl);
+  });
+
+</script>
+
 </html>
