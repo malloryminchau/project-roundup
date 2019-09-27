@@ -14,7 +14,7 @@ $(document).ready(() => {
 
     // $('#help-desc-body').toggleUp(); //change command to make sure this is toggled UP when this is clicked (default on all stages)
     $("#name-email-body").slideDown(); //name fill in form slides down
-    $("#how-it-works-start").slideUp();
+    // $("#how-it-works-start").slideUp();
   });
 
   $("#how-it-works").on("click", event => {
