@@ -11,8 +11,18 @@ $(document).ready(() => {
     event.preventDefault();
     $("#create-event-start").toggle("");
     $("#create-event-start2").toggle("");
+
     // $('#help-desc-body').toggleUp(); //change command to make sure this is toggled UP when this is clicked (default on all stages)
     $("#name-email-body").slideDown(); //name fill in form slides down
+    $("#how-it-works-start").slideUp();
+  });
+
+  $("#how-it-works").on("click", event => {
+    //new-event-button is a stand in for now before route id is selected
+    event.preventDefault();
+
+    // $('#help-desc-body').toggleUp(); //change command to make sure this is toggled UP when this is clicked (default on all stages)
+    $("#how-it-works-start").toggle(""); //name fill in form slides down
   });
 
   $("#create-event-start2").on("click", event => {
@@ -40,6 +50,7 @@ $(document).ready(() => {
         window.localStorage.setItem("name", $("#name-field").val());
         $("#name-email-body").slideUp();
         $("#event-description-body").slideDown();
+        $("#how-it-works-start").slideUp();
       }
     });
   });
@@ -64,6 +75,7 @@ $(document).ready(() => {
         window.localStorage.setItem("url", response);
         $("#event-description-body").slideUp();
         $("#proposal-times-body").slideDown();
+        $("#how-it-works-start").slideUp();
       }
     });
   });
@@ -81,6 +93,7 @@ $(document).ready(() => {
       data: { availabilities },
       success: function() {
         $("#proposal-calendar").val("");
+        $("#how-it-works-start").slideUp();
         // $("#proposal-times-body").slideUp();
       }
     });

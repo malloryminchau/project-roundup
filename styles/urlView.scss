@@ -19,7 +19,7 @@ $fieldButtonColor: #29586C;
   background-color: $primaryButtonColor;
 }
 
-#edit-confirm{
+#edit-confirm {
   background-color: $primaryButtonColor;
 }
 
@@ -34,6 +34,20 @@ $fieldButtonColor: #29586C;
   text-align: center;
   border-style: solid;
   border-width: 2px;
+}
+
+body#body {
+  background-image: url("https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547__340.jpg");
+  width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  font: 0/0 serif;
+  text-shadow: none;
+  color: transparent;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  height: 100%;
+  background-size: cover;
 }
 
 div#user-authentication {
@@ -83,7 +97,7 @@ h2#logo {
 
 div#navbar {
   padding: 1rem;
-  background:#133F53;
+  background: #133F53;
 }
 
 div#options {
@@ -121,7 +135,7 @@ div#options {
   }
 
   div#navbar {
-    background:#133F53;
+    background: #133F53;
     padding: 0.25rem;
   }
 
@@ -135,14 +149,55 @@ div#options {
   }
 
   div#availability-modify {
-    display:flex;
+    display: flex;
     flex-direction: column;
     text-align: center;
   }
 
+  @media only screen and (max-width: 320px) {
+
+    /* Small screen, non-retina */
+    body#body {
+      background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
+    }
+  }
+
+  @media only screen and (min-resolution: 2dppx) and (max-width: 320px) {
+
+    /* Small screen, retina */
+    body#body {
+      background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
+    }
+  }
+
+  @media only screen and (min-width: 321px) and (max-width: 538px) {
+
+    /* Medium screen, non-retina */
+    body#body {
+      background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
+    }
+  }
+
+  @media only screen and (min-resolution: 2dppx) and (min-width: 321px) and (max-width: 538px) {
+
+    /* Medium screen, retina */
+    body#body {
+      background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
+    }
+  }
+
+  @media only screen and (min-resolution: 2dppx) and (min-width: 539px) {
+
+    /* Large screen, retina */
+    body#body {
+      background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
+    }
+  }
 
 
-} // End of media small size
+}
+
+// End of media small size
 
 
 // .ui#content{

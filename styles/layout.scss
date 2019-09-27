@@ -50,14 +50,33 @@ button#save-redirect {
   background-color: $fieldButtonColor;
 }
 
+.works {
+  font-size: 1.6em;
+  color: black;
+}
+
+ol li {
+  list-style-type: none;
+
+}
+
 
 #navbarsmall {
   display: none;
 }
 
-body#body{
-  background: #29586C;
-  //background-color: #7093A2;
+body#body {
+  background-image: url("https://cdn.pixabay.com/photo/2018/08/14/13/23/ocean-3605547__340.jpg");
+  width: 100%;
+  display: inline-block;
+  vertical-align: middle;
+  font: 0/0 serif;
+  text-shadow: none;
+  color: transparent;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  height: 100%;
+  background-size: cover;
 }
 
 
@@ -66,9 +85,13 @@ div#main-header {
   // margin-left: 7em;
   // width: 40%;
   padding: 1rem;
-  background: #29586C;
+
   // background-image: url('../Pictures/table-wine.jpg');
   //z-index: 200;
+}
+
+.centre-everything {
+  justify-content: center;
 }
 
 div#main-header p {
@@ -78,7 +101,7 @@ div#main-header p {
 
 div#navbarbig {
   padding: 1rem;
-  background:#133F53;
+  background: #133F53;
 }
 
 
@@ -94,19 +117,20 @@ div#navbarbig {
 
 
 // LOGOS AND SLOGAN COLOURS
-h1#logo{
+h1#logo {
   font-size: 5rem;
-  color:white;
+  color: white;
   display: inline;
 
 }
-h1#logo2{
+
+h1#logo2 {
   font-size: 5rem;
   color: orangered;
   display: inline;
 }
 
-h2#slogan{
+h2#slogan {
   margin-top: 0.5rem;
 }
 
@@ -123,6 +147,10 @@ h2#slogan{
   background: $textBackgroundColor;
 }
 
+#font-color-black {
+  color: black;
+}
+
 // phone size responsive design
 @media (max-width: 600px) {
 
@@ -130,39 +158,86 @@ h2#slogan{
     padding-bottom: 0.75rem;
     display: flex;
     flex-direction: row;
-    background:#133F53;
+    background: #133F53;
     align-items: center;
   }
 
-  #main-header{
-    display:none;
+  #main-header {
+    display: none;
   }
 
   #navbarbig {
     display: none;
   }
 
-  h1#logo{
+  h1#logo {
     margin-left: 0.25rem;
     font-size: 2rem;
   }
-  h1#logo2{
+
+  h1#logo2 {
     font-size: 2rem;
   }
 
   h1.ui.inverted.header {
-  font-size: 1.5rem;
+    font-size: 1.5rem;
   }
 
   h2.ui.inverted.header {
     margin-top: 0.25rem;
     font-size: 1rem;
-    }
+  }
 
   #create-event-start {
     margin-right: 0.75rem;
-    padding:0.5rem;
+    padding: 0.5rem;
     font-size: 1.5rem;
   }
 
+  #how-it-works-start {
+    margin-right: 0.75rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+}
+
+@media only screen and (max-width: 320px) {
+
+  /* Small screen, non-retina */
+  body#body {
+    background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
+  }
+}
+
+@media only screen and (min-resolution: 2dppx) and (max-width: 320px) {
+
+  /* Small screen, retina */
+  body#body {
+    background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
+  }
+}
+
+@media only screen and (min-width: 321px) and (max-width: 538px) {
+
+  /* Medium screen, non-retina */
+  body#body {
+    background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
+  }
+}
+
+@media only screen and (min-resolution: 2dppx) and (min-width: 321px) and (max-width: 538px) {
+
+  /* Medium screen, retina */
+  body#body {
+    background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
+  }
+}
+
+@media only screen and (min-resolution: 2dppx) and (min-width: 539px) {
+
+  /* Large screen, retina */
+  body#body {
+    background-image: url("https://i.pinimg.com/originals/87/22/19/872219e39469e56ff5742581122212bf.jpg");
+  }
 }

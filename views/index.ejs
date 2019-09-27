@@ -33,61 +33,62 @@
 
 </head>
 
-<body  id="body">
+<body id="body">
+  <div class="ui left demo vertical inverted sidebar labeled icon menu" id="sidebar">
+    <a class="item" id="home-redirect">
+      <i class="home icon"></i>
+      Home
+    </a>
+    <a class="item">
+      <i class="block layout icon"></i>
+      How to use
+    </a>
+    <a class="item">
+      <i class="smile icon"></i>
+      Create Event
+    </a>
 
-    <div class="ui left demo vertical inverted sidebar labeled icon menu" id = "sidebar">
-        <a class="item" id ="home-redirect">
-          <i class="home icon"></i>
-          Home
-        </a>
-        <a class="item">
-          <i class="block layout icon"></i>
-          How to use
-        </a>
-        <a class="item">
-          <i class="smile icon"></i>
-          Create Event
-        </a>
 
-
-      </div>
-
-      <div class = "pusher">
-
-        <div class = "ui basic icon top inverted menu" style= "margin-bottom: 1em" id = "navbarsmall">
-
-            <a id = "toggle" class = "item">
-              <i class = "sidebar icon"></i>
-            </a>
-            <h1 id = "logo">ROUND</h1><h1 id="logo2" style = "color: orangered">UP</h1>
-
-            <div class="right menu">
-            <a>
-                <button class="ui primary button" id="create-event-start2" type="submit">CREATE EVENT</button>
-            </a>
-            </div>
-
-            <!-- script to trigger the side bar menu-->
-            <script>
-            $('#toggle').click(function(){
-              $('.ui.sidebar').sidebar('toggle');
-            });
-            </script>
-          </div>
-
-  <!-- NAV BAR -->
-  <div class="ui inverted vertical masthead center aligned segment" id = "navbarbig">
-    <div class="ui inverted container">
-      <div class="ui large secondary inverted pointing menu">
-        <a class="toc item"></a>
-        <a class="active item">Home</a>
-        <a class="item">How it works</a>
-      </div>
-    </div>
   </div>
 
-  <!-- hidden nav bar -->
-  <!-- <div class="ui large top fixed menu transition hidden" style="display: flex !important;">
+  <div class="pusher">
+
+    <div class="ui basic icon top inverted menu" style="margin-bottom: 1em" id="navbarsmall">
+
+      <a id="toggle" class="item">
+        <i class="sidebar icon"></i>
+      </a>
+      <h1 id="logo">ROUND</h1>
+      <h1 id="logo2" style="color: orangered">UP</h1>
+
+      <div class="right menu">
+        <a>
+          <button class="ui primary button" id="create-event-start2" type="submit">CREATE EVENT</button>
+        </a>
+      </div>
+
+      <!-- script to trigger the side bar menu-->
+      <script>
+        $('#toggle').click(function () {
+          $('.ui.sidebar').sidebar('toggle');
+        });
+
+      </script>
+    </div>
+
+    <!-- NAV BAR -->
+    <div class="ui inverted vertical masthead center aligned segment" id="navbarbig">
+      <div class="ui inverted container">
+        <div class="ui large secondary inverted pointing menu">
+          <a class="toc item"></a>
+          <a class="active item">Home</a>
+          <a id="how-it-works" class="item">How it works</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- hidden nav bar -->
+    <!-- <div class="ui large top fixed menu transition hidden" style="display: flex !important;">
       <div class="ui container">
         <a class="active item">Home</a>
         <a class="item">Work</a>
@@ -105,85 +106,104 @@
     </div> -->
 
 
-  <!-- TITLE container -->
-  <div class="ui hidden divider"> </div>
-  <!-- <div class="ui inverted vertical masthead left aligned segment" > -->
-    <div class="ui container" style="margin-bottom: 2em" id ="main-header">
-            <h1 id = "logo">ROUND</h1>
-            <h1 id = "logo2">UP</h1>
-        <h2 id = "slogan">Make your next event a success</h2>
-      <button class="ui huge primary button" id="create-event-start" type="submit">Create Event!</button>
-      <br>
-      <!-- <i class = "down arrow icon large"></i> -->
-      <p>Planning can be wild. It doesn't have to be with RoundUP</p>
-    </div   >
-  <!-- </div> -->
-
-<div class = "ui text container right aligned">
-</div>
-
-
-  <!-- Creator information Form -->
-  <div class="create-event-body ui text container" id="name-email-body" style="display: none">
-
-    <h1 class = "title">Your Information</h1>
-    <form method="POST" action="/">
-      <h2>Enter your name</h2>
-      <div class="ui input"> <input id="name-field" type="text" placeholder="Name..."> </div>
-      <h2>Enter your email address</h2>
-      <div class="ui input"> <input id="email-field" type="text" placeholder="Email..."> </div>
-      <div class="ui hidden divider"> </div>
-      <button type="submit" class="ui primary button" id="name-email-next">Save</button>
-    </form>
-  </div>
-  <!-- <script>$('#name-email-body').slideUp(0)</script> -->
-
-  <!-- Event information Form -->
-  <div class="create-event-body ui text container" id="event-description-body" style="display: none">
-    <h1>Event Details</h1>
-    <form method="POST" action="/">
-      <h2>Enter a Name for Your Event</h2>
-      <div class="ui input"> <input id="event-name" type="text" placeholder="Event Name..."> </div>
-      <h2>Enter a description for your event</h2>
-      <div class="ui input"> <input id="event-description" type="text" placeholder="Description..."> </div>
-      <h2>Enter your event location</h2>
-      <div class="ui input"> <input id="event-location" type="text" placeholder="Location..."> </div>
-      <div class="ui hidden divider"></div>
-      <button type="submit" class="ui primary button" id="description-location-next">Save</button>
-    </form>
-  </div>
-  <!-- <script>$('#event-description-body').slideUp(0)</script> -->
-
-
-  <!-- Event Availability Creation Form -->
-  <div class="create-event-body ui text container" id="proposal-times-body" style="display: none">
-    <h1>Possible Event Times</h1>
-    <p>Please enter in possible event start dates and times below.</p>
-    <p>Hit "Add Availability" to add in a possible event start time to your event.</p>
-    <p>Add as many availabilities as you like! </p>
-    <p>Hit the "Save" Button to continue!</p>
-    <form method="POST" action="/">
-
-      <div class="ui calendar" id="standard_calendar">
-        <div class="ui input left icon">
-          <i class="calendar icon"></i>
-          <input type="text" placeholder="Date" id="proposal-calendar"> <button class="ui primary button"
-            id="proposal-save-button">Add Availability</button>
-        </div>
+    <!-- TITLE container -->
+    <div class="ui hidden divider"> </div>
+    <!-- <div class="ui inverted vertical masthead left aligned segment" > -->
+    <div class="ui container" style="margin-bottom: 2em" id="main-header">
+      <div class=centre-everything>
+        <h1 id="logo">ROUND</h1>
+        <h1 id="logo2">UP</h1>
+        <h2 id="slogan">Make your next event a success</h2>
+        <button class="ui huge primary button" id="create-event-start" type="submit">Create Event!</button>
       </div>
-      <div class="ui hidden divider"></div>
-    </form>
 
-    <button type="submit" class="ui primary button" id="save-redirect">Save</button>
+      <!-- <i class = "down arrow icon large"></i> -->
+    </div>
+    <!-- </div> -->
 
-  </div>
-  <!-- <script>$('#proposal-times-body').slideUp(0)</script> -->
-  <script>
-    $('#standard_calendar')
-      .calendar();
+    <div class="ui text container right aligned">
+    </div>
 
-  </script>
-  <!-- <script>
+
+    <!-- Creator information Form -->
+    <div class="create-event-body ui text container" id="name-email-body" style="display: none">
+
+      <h1 class="title">Your Information</h1>
+      <form method="POST" action="/">
+        <h2>Enter your name</h2>
+        <div class="ui input"> <input id="name-field" type="text" placeholder="Name..."> </div>
+        <h2>Enter your email address</h2>
+        <div class="ui input"> <input id="email-field" type="text" placeholder="Email..."> </div>
+        <div class="ui hidden divider"> </div>
+        <button type="submit" class="ui primary button" id="name-email-next">Save</button>
+      </form>
+    </div>
+    <!-- <script>$('#name-email-body').slideUp(0)</script> -->
+
+    <div class="create-event-body ui text container" id="how-it-works-start" style="display: none">
+
+      <h1 class="title" id="logo">How It </h1>
+      <h1 class="title" id="logo2">Works</h1>
+
+      <p class="works">
+        RoundUp is a site designed for any user to create events with their friends, family, coworkers, pets, etc.
+
+        <ol class="works"> To get this working:
+          <li>Click the Create Event! button</li>
+          <li>Enter your name and email in their respective fields</li>
+          <li>Enter a name for your event, enter a description, enter the event location</li>
+          <li>Choose the date(s) and time(s) for your invitation</li>
+        </ol>
+      </p>
+
+    </div>
+
+    <!-- Event information Form -->
+    <div class="create-event-body ui text container" id="event-description-body" style="display: none">
+      <h1>Event Details</h1>
+      <form method="POST" action="/">
+        <h2>Enter a Name for Your Event</h2>
+        <div class="ui input"> <input id="event-name" type="text" placeholder="Event Name..."> </div>
+        <h2>Enter a description for your event</h2>
+        <div class="ui input"> <input id="event-description" type="text" placeholder="Description..."> </div>
+        <h2>Enter your event location</h2>
+        <div class="ui input"> <input id="event-location" type="text" placeholder="Location..."> </div>
+        <div class="ui hidden divider"></div>
+        <button type="submit" class="ui primary button" id="description-location-next">Save</button>
+      </form>
+    </div>
+    <!-- <script>$('#event-description-body').slideUp(0)</script> -->
+
+
+    <!-- Event Availability Creation Form -->
+    <div class="create-event-body ui text container" id="proposal-times-body" style="display: none">
+      <h1 id="font-color-black">Possible Event Times</h1>
+      <p id="font-color-black">Please enter in possible event start dates and times below.</p>
+      <p id="font-color-black">Hit "Add Availability" to add in a possible event start time to your event.</p>
+      <p id="font-color-black">Add as many availabilities as you like! </p>
+      <p id="font-color-black">Hit the "Save" Button to continue!</p>
+      <form method="POST" action="/">
+
+        <div class="ui calendar" id="standard_calendar">
+          <div class="ui input left icon">
+            <i class="calendar icon"></i>
+            <input type="text" placeholder="Date" id="proposal-calendar"> <button class="ui primary button"
+              id="proposal-save-button">Add Availability</button>
+          </div>
+        </div>
+        <div class="ui hidden divider"></div>
+      </form>
+
+      <button type="submit" class="ui primary button" id="save-redirect">Save</button>
+
+    </div>
+    <!-- <script>$('#proposal-times-body').slideUp(0)</script> -->
+    <script>
+      $('#standard_calendar')
+        .calendar();
+
+    </script>
+    <!-- <script>
     function activatePlacesSearch() {
       var input = document.getElementById('event-location');
       var autocomplete = new google.maps.places.Autocomplete(input);
@@ -191,7 +211,7 @@
 
   </script>
   <!-- Add feature when presenting -->
-  <!-- <script type="text/javascript"
+    <!-- <script type="text/javascript"
     src="https://maps.googleapis.com/maps/api/js?key=YOURAPIKEY&libraries=places&callback=activatePlacesSearch">
   </script> -->
   </div>
