@@ -72,7 +72,14 @@ $(document).ready(() => {
         new_row.append(`<td class="center aligned">${name}</td>`)
 
         tempArray.forEach(function(aTime){
-          new_row.append(`<td class="center aligned">${aTime}</td>`)
+          if (aTime === true) {
+            new_row.append(`<td class="center aligned"><i class="large green checkmark icon"></i></td>`)
+          } else {
+            new_row.append(`<td class="center aligned"><i class="large red ban icon"></i></td>`)
+          }
+
+
+          // new_row.append(`<td class="center aligned">${aTime}</td>`)
 
       })
 

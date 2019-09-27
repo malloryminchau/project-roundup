@@ -98,9 +98,9 @@
         <button class ="ui primary button" type = "submit" id ="confirm-user">Save User Info</button>
       </div>
 
-      <div class = "ui text container" id = "availability-modify" style = "display: none">
+      <div class = "ui container" id = "availability-modify" style = "display: none">
           <h1>Confirm Availability</h1>
-          <div class = "ui container" id = "options"></div>
+          <div class = "ui text container" id = "options"></div>
 
           <div class="ui hidden divider"></div>
         <button class ="ui primary button" type = "submit" id ="confirm-rsvp">Confirm Here</button>
@@ -114,7 +114,7 @@
           <div class="ui input">
             <input type="text" placeholder="Email..." id="edit-email">
           </div>
-          <h2>Availability Options:</h2>
+          <h2>Availability Options</h2>
           <div class = "ui container" id = "edit-options"></div> <!-- THIS IS WHERE TO APPEND THE OPTIONS-->
           <div class="ui hidden divider"></div>
           <button class ="ui primary button" type = "submit" id ="edit-confirm">Confirm Here</button>
@@ -124,10 +124,13 @@
 
         <!-- small table-->
       <div class = "ui text container" id = "smalltable">
-        <h1>Potential Event Start Times:</h1>
+        <h1 style="display: inline">Potential Event Start Times </h1><i class="large calendar alternate outline icon" style="display: inline; vertical-align: baseline;" id = "calendar-icon"></i>
+        <div class="ui hidden divider"></div>
         <div id = "smalltime"></div>
+        <div class="ui hidden divider"></div>
 
-        <h1>People Responded:</h1>
+        <h1 style="display: inline;">People Responded </h1><i class="large users icon" style="display: inline; vertical-align: baseline;" id = "calendar-icon"></i>
+        <div class="ui hidden divider"></div>
         <div id = "smallname"></div>
 
 
@@ -139,7 +142,7 @@
       <table class="ui celled structured table">
         <thead>
           <tr id="table-times">
-            <th rowspan="2">Name</th>
+            <th class="center aligned" rowspan="2">Name</th>
             </tr>
             <tr>
           </tr>

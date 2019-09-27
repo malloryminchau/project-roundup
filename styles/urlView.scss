@@ -6,6 +6,12 @@ $fieldButtonColor: #29586C;
 
 // #edit-rsvp-authentication
 
+
+div#options {
+  display: flex;
+  flex-direction: row;
+}
+
 #smalltable {
   display:none;
 }
