@@ -1,8 +1,8 @@
 let hrefVal = $(location).attr("href");
-let url = hrefVal.slice(31);
+//let url = hrefVal.slice(31);
 
 //localhost
-// let url = hrefVal.slice(28);
+let url = hrefVal.slice(28);
 
 let optionID = 0;
 let timeArray = [];
